@@ -1,0 +1,11 @@
+# Task ID: 9
+# Title: Implement Chat Session and Message Persistence with Supabase
+# Status: pending
+# Dependencies: 2, 4, 5
+# Priority: medium
+# Description: Persist chat sessions and messages in Supabase PostgreSQL, supporting per-item chat history and efficient retrieval.
+# Details:
+Design efficient queries for session and message retrieval. Implement pagination for large histories. Use Supabase client with RLS policies. Index tables for performance.
+
+# Test Strategy:
+Load tests for large datasets (1000+ messages). Verify RLS enforcement. Automated tests for CRUD operations.

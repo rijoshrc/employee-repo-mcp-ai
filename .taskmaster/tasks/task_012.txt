@@ -1,0 +1,11 @@
+# Task ID: 12
+# Title: Implement Security, RLS, and Audit Logging
+# Status: pending
+# Dependencies: 3, 6, 9
+# Priority: high
+# Description: Enforce security best practices, including Row Level Security, encrypted data transmission, secure token handling, and audit logging.
+# Details:
+Review and harden all RLS policies. Use HTTPS for all endpoints. Store tokens securely (never in client). Implement audit logging for authentication and data access events. Use Supabase's built-in logging and custom triggers.
+
+# Test Strategy:
+Penetration testing. Automated tests for RLS bypass attempts. Manual review of audit logs.

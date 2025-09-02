@@ -1,0 +1,61 @@
+# Task ID: 4
+# Title: Design and Implement Modular Chat UI
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Build a real-time chat interface using shadcn/ui, supporting message history, typing indicators, and responsive design.
+# Details:
+Create modular React components for chat window, message list, input box, and typing indicator. Use shadcn/ui primitives. Implement dark/light theme toggle. Ensure accessibility (keyboard navigation, ARIA roles). Use Tailwind for layout.
+
+# Test Strategy:
+Unit and snapshot tests for UI components (React Testing Library). Accessibility audit using axe. Manual test on mobile and desktop.
+
+# Subtasks:
+## 1. Set Up Project with shadcn/ui and Tailwind CSS [pending]
+### Dependencies: None
+### Description: Initialize the React project and configure shadcn/ui and Tailwind CSS for component styling and layout.
+### Details:
+Install shadcn/ui and Tailwind CSS. Set up Tailwind configuration and ensure shadcn/ui primitives are available for use in the project.
+
+## 2. Design Modular Chat Window Component Structure [pending]
+### Dependencies: 4.1
+### Description: Define the modular structure for the chat UI, including chat window, message list, input box, and typing indicator components.
+### Details:
+Create a component hierarchy and interface contracts for each UI part, ensuring separation of concerns and reusability.
+
+## 3. Implement Chat Window and Message List Components [pending]
+### Dependencies: 4.2
+### Description: Develop the chat window and message list components using shadcn/ui primitives and Tailwind for responsive layout.
+### Details:
+Build the main chat container and message list, supporting scroll, message grouping, and responsive resizing.
+
+## 4. Develop Chat Input Box with Message Sending [pending]
+### Dependencies: 4.2
+### Description: Create the chat input component, supporting message composition, submission, and keyboard accessibility.
+### Details:
+Use shadcn/ui input primitives. Implement keyboard shortcuts (Enter to send, Shift+Enter for newline) and ARIA roles.
+
+## 5. Add Typing Indicator Component [pending]
+### Dependencies: 4.2
+### Description: Implement a typing indicator that displays when a user or bot is typing, using shadcn/ui and Tailwind.
+### Details:
+Design a visually distinct typing indicator. Ensure it updates in real time and is accessible to screen readers.
+
+## 6. Integrate Message History and Real-Time Updates [pending]
+### Dependencies: 4.3, 4.4, 4.5
+### Description: Enable real-time message updates and display message history within the chat window.
+### Details:
+Connect components to a chat state manager (e.g., useChat or custom hook). Support initial message loading and live updates.
+
+## 7. Implement Dark/Light Theme Toggle [pending]
+### Dependencies: 4.1
+### Description: Add a theme toggle to switch between dark and light modes, leveraging shadcn/ui theming capabilities.
+### Details:
+Use shadcn/ui's theme system and Tailwind's dark mode support. Ensure all components adapt to theme changes.
+
+## 8. Ensure Accessibility and Responsive Design [pending]
+### Dependencies: 4.3, 4.4, 4.5, 4.7
+### Description: Audit and enhance accessibility (keyboard navigation, ARIA roles) and ensure the chat UI is fully responsive.
+### Details:
+Conduct accessibility audit using axe. Refine Tailwind layouts for mobile and desktop. Add missing ARIA attributes and keyboard support.
+

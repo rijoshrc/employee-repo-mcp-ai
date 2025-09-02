@@ -1,0 +1,11 @@
+# Task ID: 11
+# Title: Implement File and Metadata Management with Supabase Storage
+# Status: pending
+# Dependencies: 2, 6
+# Priority: medium
+# Description: Enable file uploads, downloads, and metadata extraction for Podio items using Supabase Storage.
+# Details:
+Integrate Supabase Storage SDK. Store file metadata in files table. Support file previews and secure download URLs. Enforce access control via RLS.
+
+# Test Strategy:
+Upload/download tests for various file types. Verify metadata extraction. Security tests for access control.

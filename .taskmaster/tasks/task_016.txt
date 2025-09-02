@@ -1,0 +1,61 @@
+# Task ID: 16
+# Title: Implement Dashboard and Navigation System
+# Status: pending
+# Dependencies: 1, 3, 4, 9
+# Priority: high
+# Description: Develop a comprehensive dashboard with sidebar navigation, recent chats list, quick start actions, user profile management, breadcrumbs, and responsive mobile navigation.
+# Details:
+Design the dashboard layout using modular React components, leveraging shadcn/ui and Tailwind CSS for consistent styling and responsiveness. Implement a sidebar with navigation links to core sections (e.g., Dashboard, Chats, Profile, Settings), and ensure it collapses or adapts for mobile devices. Integrate a recent chats list by querying persisted chat sessions from Supabase, displaying relevant metadata and supporting quick navigation. Add a quick start section for initiating new chats or workflows. Implement user profile management, allowing users to view and edit their profile synced from Podio. Add breadcrumbs to reflect the current navigation path. Ensure all navigation is accessible (keyboard navigation, ARIA roles) and supports both light and dark themes. Use Next.js routing for navigation logic, and ensure all data fetching is secure and respects RLS policies. Prioritize performance and usability, following dashboard UX best practices (clear hierarchy, minimal clutter, user-centered design).
+
+# Test Strategy:
+Verify that the dashboard renders correctly on desktop and mobile devices, with responsive sidebar and navigation elements. Test navigation flows between all major sections, ensuring breadcrumbs update accurately. Confirm recent chats list displays correct data and updates in real time. Test quick start actions for correct routing and initialization. Validate user profile management (view/edit) and ensure changes sync with Podio and Supabase. Perform accessibility audits (keyboard navigation, ARIA roles, color contrast). Conduct usability testing with representative users. Run automated and manual tests to ensure secure data access and correct enforcement of RLS policies.
+
+# Subtasks:
+## 1. Design Modular Dashboard Layout [pending]
+### Dependencies: None
+### Description: Create the overall dashboard structure using modular React components, ensuring clear hierarchy and separation of concerns for maintainability and scalability.
+### Details:
+Define the main layout, including header, sidebar, main content area, and footer. Use shadcn/ui and Tailwind CSS for consistent styling and responsive design.
+
+## 2. Implement Sidebar Navigation with Responsive Behavior [pending]
+### Dependencies: 16.1
+### Description: Develop a sidebar containing navigation links to core sections (Dashboard, Chats, Profile, Settings), ensuring it collapses or adapts for mobile devices.
+### Details:
+Use Tailwind CSS for responsive breakpoints and shadcn/ui for accessible navigation components. Integrate Next.js routing for navigation logic.
+
+## 3. Integrate Recent Chats List from Supabase [pending]
+### Dependencies: 16.1, 16.2
+### Description: Query persisted chat sessions from Supabase and display a recent chats list with relevant metadata, supporting quick navigation to chat sessions.
+### Details:
+Implement secure data fetching with RLS policies. Display chat titles, timestamps, and unread indicators. Enable click-to-navigate for each chat.
+
+## 4. Add Quick Start Actions Section [pending]
+### Dependencies: 16.1
+### Description: Implement a quick start section for initiating new chats or workflows, providing users with prominent, accessible actions.
+### Details:
+Design quick action buttons using shadcn/ui and Tailwind CSS. Integrate with Next.js routing and relevant APIs to start new chats or workflows.
+
+## 5. Implement User Profile Management Synced with Podio [pending]
+### Dependencies: 16.1
+### Description: Allow users to view and edit their profile information, syncing changes with Podio and reflecting updates in the dashboard.
+### Details:
+Fetch user profile data from Podio, display it in a profile section, and provide forms for editing. Ensure secure data handling and update propagation.
+
+## 6. Add Breadcrumbs for Navigation Path [pending]
+### Dependencies: 16.2
+### Description: Display breadcrumbs reflecting the current navigation path, updating dynamically as users navigate between sections.
+### Details:
+Implement a breadcrumb component that integrates with Next.js routing and updates based on the current route.
+
+## 7. Ensure Accessibility and Theming Support [pending]
+### Dependencies: 16.1, 16.2, 16.3, 16.4, 16.5, 16.6
+### Description: Implement accessibility features (keyboard navigation, ARIA roles) and support both light and dark themes throughout the dashboard.
+### Details:
+Audit all components for accessibility compliance. Use shadcn/ui and Tailwind CSS theming utilities to enable theme switching.
+
+## 8. Optimize Performance and Usability [pending]
+### Dependencies: 16.1, 16.2, 16.3, 16.4, 16.5, 16.6, 16.7
+### Description: Apply dashboard UX best practices, optimize data fetching, and ensure high performance and usability on all devices.
+### Details:
+Implement efficient data loading (pagination, caching), minimize clutter, and follow user-centered design principles. Profile and optimize rendering performance.
+

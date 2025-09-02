@@ -1,0 +1,61 @@
+# Task ID: 1
+# Title: Initialize Next.js 15 Project with TypeScript and Tailwind CSS
+# Status: pending
+# Dependencies: None
+# Priority: high
+# Description: Set up the foundational frontend project using Next.js 15, TypeScript, and Tailwind CSS, ensuring shadcn/ui is integrated for UI components.
+# Details:
+Use `npx create-next-app@latest` with TypeScript template. Install Tailwind CSS (`^3.4.1`), shadcn/ui, and configure PostCSS. Set up a custom theme system using shadcn/ui's theming utilities. Ensure project structure supports modular components and responsive design.
+
+# Test Strategy:
+Verify project builds and runs locally. Check that Tailwind and shadcn/ui components render correctly. Confirm dark/light theme toggling works.
+
+# Subtasks:
+## 1. Create Next.js 15 Project with TypeScript [pending]
+### Dependencies: None
+### Description: Initialize a new Next.js 15 project using the TypeScript template to ensure type safety and modern React features.
+### Details:
+Run `npx create-next-app@latest my-project --typescript --eslint --app` to scaffold the project with TypeScript and ESLint enabled.
+
+## 2. Install Tailwind CSS and Configure PostCSS [pending]
+### Dependencies: 1.1
+### Description: Add Tailwind CSS (v3.4.1 or newer) and configure PostCSS for utility-first styling.
+### Details:
+Install Tailwind CSS and PostCSS dependencies. Create `postcss.config.mjs` and add Tailwind as a plugin. Import Tailwind in `app/globals.css`.
+
+## 3. Integrate shadcn/ui Library [pending]
+### Dependencies: 1.2
+### Description: Install and set up shadcn/ui for reusable UI components compatible with Next.js 15 and Tailwind CSS.
+### Details:
+Install shadcn/ui via npm. Configure shadcn/ui according to documentation for Next.js 15 and Tailwind CSS integration.
+
+## 4. Configure Tailwind CSS Theme and Customization [pending]
+### Dependencies: 1.2
+### Description: Extend Tailwind CSS configuration to support custom colors, fonts, and breakpoints for the project's design system.
+### Details:
+Edit `tailwind.config.ts` to add custom theme values (colors, fonts, spacing). Import desired fonts in `app/layout.tsx` using `next/font/google`.
+
+## 5. Set Up shadcn/ui Theming Utilities [pending]
+### Dependencies: 1.3, 1.4
+### Description: Implement shadcn/ui's theming utilities to enable dark/light mode and custom theme support.
+### Details:
+Add ThemeProvider and ThemeToggle components from shadcn/ui. Wrap the app in ThemeProvider in `app/layout.tsx`.
+
+## 6. Organize Modular Component Structure [pending]
+### Dependencies: 1.1
+### Description: Establish a scalable folder structure for modular React components, ensuring separation of concerns and reusability.
+### Details:
+Create `components/` directory. Define base UI components and organize them by feature or domain.
+
+## 7. Implement Responsive Design [pending]
+### Dependencies: 1.4, 1.6
+### Description: Ensure all components and layouts are responsive using Tailwind CSS utilities and best practices.
+### Details:
+Apply Tailwind's responsive classes (e.g., `md:`, `lg:`) to layouts and components. Test on various screen sizes.
+
+## 8. Verify Initial Project Setup and UI Integration [pending]
+### Dependencies: 1.3, 1.5, 1.7
+### Description: Test the complete setup to ensure Next.js, TypeScript, Tailwind CSS, and shadcn/ui work together seamlessly.
+### Details:
+Run the development server. Render sample pages and components using all integrated technologies. Check for build errors and UI issues.
+

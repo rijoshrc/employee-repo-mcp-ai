@@ -1,0 +1,49 @@
+# Task ID: 7
+# Title: Implement MCP Server for Podio API Communication
+# Status: pending
+# Dependencies: 6
+# Priority: high
+# Description: Develop a custom MCP server to handle Podio API requests, tool selection, and access validation.
+# Details:
+Build Node.js server (Express or Fastify) with endpoints for each MCP tool (get_item_basic, get_item_full, get_comments, etc.). Use official Podio JavaScript SDK (`podio-js` v2.x). Implement OAuth token management, rate limit handling, and error logging.
+
+# Test Strategy:
+Unit and integration tests for each MCP endpoint. Mock Podio API for error scenarios. Monitor rate limits and retry logic.
+
+# Subtasks:
+## 1. Design MCP Server Architecture and Endpoint Specification [pending]
+### Dependencies: None
+### Description: Define the overall architecture of the MCP server, select the Node.js framework (Express or Fastify), and specify REST endpoints for each MCP tool (e.g., get_item_basic, get_item_full, get_comments).
+### Details:
+Document the API contract for each endpoint, including input/output schemas, authentication requirements, and error responses. Ensure endpoints align with Podio API capabilities and MCP protocol expectations.
+
+## 2. Integrate Podio JavaScript SDK and Implement Core MCP Tool Handlers [pending]
+### Dependencies: 7.1
+### Description: Install and configure the official Podio JavaScript SDK (`podio-js` v2.x). Implement handler functions for each MCP tool endpoint to interact with the Podio API.
+### Details:
+Ensure each handler correctly maps request parameters to Podio SDK calls, handles Podio API responses, and returns standardized MCP responses.
+
+## 3. Implement OAuth Token Management and Secure Storage [pending]
+### Dependencies: 7.2
+### Description: Develop logic for acquiring, refreshing, and securely storing Podio OAuth tokens for API access. Ensure tokens are never exposed to clients.
+### Details:
+Integrate with existing authentication flows if available. Use environment variables or secure server-side storage for client secrets and tokens.
+
+## 4. Add Access Validation and Authorization Logic [pending]
+### Dependencies: 7.3
+### Description: Implement middleware or endpoint-level checks to validate user access and permissions for each MCP tool request.
+### Details:
+Leverage Podio API's permission model and any custom business logic to enforce access control. Return appropriate error codes for unauthorized access.
+
+## 5. Implement Rate Limit Handling and Error Logging [pending]
+### Dependencies: 7.4
+### Description: Detect and handle Podio API rate limits gracefully. Implement structured error logging for all MCP endpoints, including API errors and internal exceptions.
+### Details:
+Monitor Podio API rate limit headers, implement retry logic with exponential backoff, and log all errors with sufficient context for debugging.
+
+## 6. Develop Automated Tests and Mock Podio API for Integration Testing [pending]
+### Dependencies: 7.5
+### Description: Create unit and integration tests for all MCP endpoints, using a mocked Podio API to simulate success and error scenarios.
+### Details:
+Ensure tests cover all endpoint behaviors, including edge cases, error handling, and rate limit scenarios. Use test doubles for Podio SDK interactions.
+

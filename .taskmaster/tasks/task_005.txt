@@ -1,0 +1,61 @@
+# Task ID: 5
+# Title: Set Up Supabase Realtime for Live Chat Updates
+# Status: pending
+# Dependencies: 2, 4
+# Priority: high
+# Description: Enable real-time chat updates, typing indicators, and user presence using Supabase Realtime.
+# Details:
+Subscribe to changes in messages and chat_sessions tables using Supabase Realtime client. Implement typing indicator logic with ephemeral presence channels. Handle connection status and automatic reconnection.
+
+# Test Strategy:
+Simulate multiple users and verify real-time updates. Automated tests for presence and typing events. Manual test for latency (<100ms).
+
+# Subtasks:
+## 1. Initialize Supabase Realtime Client in Project [pending]
+### Dependencies: None
+### Description: Set up and configure the Supabase Realtime client within the chat application, ensuring environment variables are securely loaded.
+### Details:
+Import Supabase client libraries, configure with project URL and public key, and verify connection to Supabase Realtime.
+
+## 2. Subscribe to Messages Table for Real-Time Updates [pending]
+### Dependencies: 5.1
+### Description: Implement subscription logic to listen for inserts, updates, and deletes in the messages table using Supabase Realtime.
+### Details:
+Use Supabase Realtime channel to subscribe to changes in the messages table and update chat UI accordingly.
+
+## 3. Subscribe to Chat Sessions Table for Session Events [pending]
+### Dependencies: 5.1
+### Description: Set up real-time listeners for changes in the chat_sessions table to track session creation, updates, and closure.
+### Details:
+Subscribe to chat_sessions table events and update session state in the frontend as needed.
+
+## 4. Implement Ephemeral Presence Channels for User Presence [pending]
+### Dependencies: 5.1
+### Description: Configure ephemeral presence channels to track which users are online and present in each chat room.
+### Details:
+Use Supabase presence API to broadcast and listen for user join/leave events within chat rooms.
+
+## 5. Implement Typing Indicator Logic Using Presence Channels [pending]
+### Dependencies: 5.4
+### Description: Enable real-time typing indicators by broadcasting typing events through ephemeral presence channels.
+### Details:
+Emit and listen for typing events; update UI to show when users are actively typing.
+
+## 6. Handle Connection Status and Automatic Reconnection [pending]
+### Dependencies: 5.1
+### Description: Detect connection status changes and implement automatic reconnection logic for Supabase Realtime channels.
+### Details:
+Monitor connection state, display status to users, and attempt reconnection on disconnect.
+
+## 7. Integrate Real-Time Event Handlers with Chat UI Components [pending]
+### Dependencies: 5.2, 5.3, 5.5, 5.6
+### Description: Connect real-time event listeners to chat UI components for seamless updates and user feedback.
+### Details:
+Ensure message, session, presence, and typing events trigger appropriate UI updates.
+
+## 8. Test and Validate Real-Time Chat Functionality [pending]
+### Dependencies: 5.7
+### Description: Simulate multiple users and validate all real-time chat features, including latency, presence, and typing indicators.
+### Details:
+Run automated and manual tests to ensure real-time updates, presence, and typing indicators work reliably under load.
+

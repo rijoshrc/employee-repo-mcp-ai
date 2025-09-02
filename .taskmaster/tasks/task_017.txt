@@ -1,0 +1,61 @@
+# Task ID: 17
+# Title: Implement AI Query Analysis and MCP Tool Selection System
+# Status: pending
+# Dependencies: 7, 8, 9
+# Priority: high
+# Description: Develop an intelligent system that leverages Gemini AI to analyze user queries, infer intent, and automatically select the appropriate MCP tools for Podio data operations, incorporating context management and conversation history analysis.
+# Details:
+Integrate Gemini AI (Pro/Flash) to process incoming user queries, using advanced prompt engineering to extract user intent and relevant entities. Design a query analysis pipeline that parses the user's natural language input, references recent conversation history, and maintains context across multi-turn interactions. Implement logic to map inferred intents to specific MCP tools (e.g., get_item_basic, get_comments, get_files) by defining a tool selection schema and decision rules. Ensure the system can handle ambiguous or compound queries by decomposing them and selecting multiple tools if needed. Store and retrieve conversation context and history from Supabase to inform tool selection and maintain continuity. Provide a transparent reasoning trace for tool selection to support debugging and future improvements. Ensure the system is extensible for new MCP tools and supports fallback or clarification prompts when intent is unclear.
+
+# Test Strategy:
+Create a comprehensive suite of test queries covering all supported MCP tools, including ambiguous, compound, and context-dependent questions. Simulate multi-turn conversations to verify context management and correct tool selection across turns. Validate that the system selects the correct MCP tool(s) for each query and provides reasoning traces. Test with edge cases such as incomplete queries, conflicting intents, and unsupported operations. Perform manual review of AI-generated intent mappings and tool selections. Monitor error rates and fallback scenarios. Ensure integration with Supabase for context persistence and retrieval functions as expected.
+
+# Subtasks:
+## 1. Integrate Gemini AI for Query Processing [pending]
+### Dependencies: None
+### Description: Set up Gemini AI (Pro/Flash) API integration to process incoming user queries, ensuring secure API key management and connectivity.
+### Details:
+Implement the Gemini API client in the backend, supporting both Pro and Flash models. Ensure environment variables are used for API keys and that the integration supports both synchronous and asynchronous query handling.
+
+## 2. Design Advanced Prompt Engineering Pipeline [pending]
+### Dependencies: 17.1
+### Description: Develop a prompt engineering framework to extract user intent and relevant entities from natural language queries.
+### Details:
+Create reusable prompt templates and logic to dynamically construct prompts based on user input and conversation context. Optimize prompts for intent extraction and entity recognition.
+
+## 3. Implement Query Analysis and Parsing Module [pending]
+### Dependencies: 17.2
+### Description: Build a module to parse user queries, decompose compound or ambiguous queries, and identify actionable intents.
+### Details:
+Leverage Gemini AI outputs to segment queries, resolve ambiguities, and structure parsed results for downstream processing. Support multi-intent and compound queries.
+
+## 4. Develop Context and Conversation History Management [pending]
+### Dependencies: 17.3
+### Description: Implement logic to store, retrieve, and update conversation context and history using Supabase, enabling multi-turn interaction continuity.
+### Details:
+Design data models and APIs for persisting conversation state, recent intents, and relevant entities. Ensure context is referenced during query analysis and tool selection.
+
+## 5. Define MCP Tool Selection Schema and Decision Rules [pending]
+### Dependencies: 17.3, 17.4
+### Description: Create a schema and rule set to map inferred intents and entities to specific MCP tools for Podio data operations.
+### Details:
+Document all available MCP tools and their capabilities. Develop a mapping logic that selects the appropriate tool(s) based on parsed intent and context, supporting extensibility for new tools.
+
+## 6. Implement Tool Invocation and Orchestration Layer [pending]
+### Dependencies: 17.5
+### Description: Build the orchestration logic to invoke selected MCP tools, handle multiple tool calls for compound queries, and aggregate results.
+### Details:
+Ensure the system can execute one or more MCP tool operations per query, manage dependencies between tool calls, and return unified results to the user.
+
+## 7. Provide Transparent Reasoning Trace for Tool Selection [pending]
+### Dependencies: 17.6
+### Description: Implement a mechanism to generate and log a reasoning trace that explains how tool selection decisions were made for each query.
+### Details:
+Capture and store the decision path, including parsed intents, context references, and rule applications, to support debugging and future improvements.
+
+## 8. Enable Extensibility and Fallback Handling [pending]
+### Dependencies: 17.5, 17.7
+### Description: Design the system to support easy addition of new MCP tools and implement fallback or clarification prompts when intent is unclear.
+### Details:
+Abstract tool selection logic to allow plug-and-play integration of new tools. Implement logic to detect unclear intents and prompt users for clarification or fallback gracefully.
+

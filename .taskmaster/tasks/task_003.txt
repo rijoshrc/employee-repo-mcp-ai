@@ -1,0 +1,55 @@
+# Task ID: 3
+# Title: Implement Supabase Auth with Podio OAuth Integration
+# Status: pending
+# Dependencies: 2
+# Priority: high
+# Description: Integrate Supabase Auth with custom Podio OAuth provider for secure user authentication and session management.
+# Details:
+Use Supabase Auth's external OAuth provider support. Implement Podio OAuth 2.0 flow (per Podio API docs). Store and refresh tokens securely. Sync user profile data from Podio on login. Use environment variables for client secrets.
+
+# Test Strategy:
+Automated tests for login, logout, and token refresh. Manual test with real Podio account. Verify user data is synced and session persists.
+
+# Subtasks:
+## 1. Register Podio OAuth App and Configure Credentials [pending]
+### Dependencies: None
+### Description: Create a new OAuth application in Podio, obtain the client ID and secret, and configure the necessary redirect URIs for Supabase integration.
+### Details:
+Follow Podio API documentation to register the app. Store client credentials securely using environment variables as per best practices.
+
+## 2. Enable and Configure Custom OAuth Provider in Supabase Auth [pending]
+### Dependencies: 3.1
+### Description: Set up Supabase Auth to use Podio as an external OAuth provider by entering the client ID, secret, and redirect URIs in the Supabase dashboard.
+### Details:
+Use Supabase's external OAuth provider support to add Podio, referencing the provider configuration section in Supabase settings.
+
+## 3. Implement Podio OAuth 2.0 Authorization Flow [pending]
+### Dependencies: 3.2
+### Description: Develop the frontend and backend logic to initiate and handle the Podio OAuth 2.0 flow, including redirecting users and handling authorization callbacks.
+### Details:
+Use the PKCE flow if supported. Store the code verifier in the session and handle the authorization code exchange securely.
+
+## 4. Securely Store and Refresh Podio OAuth Tokens [pending]
+### Dependencies: 3.3
+### Description: Implement secure storage for access and refresh tokens, and set up logic to refresh tokens as needed using Supabase backend functions.
+### Details:
+Ensure tokens are never exposed to the client. Use Supabase Edge Functions or server-side logic for token refresh and storage.
+
+## 5. Sync User Profile Data from Podio on Login [pending]
+### Dependencies: 3.4
+### Description: Fetch and update user profile data from Podio each time a user logs in or refreshes their session.
+### Details:
+Call Podio API endpoints to retrieve user profile information and update Supabase user records accordingly.
+
+## 6. Integrate Session Management with Supabase Auth [pending]
+### Dependencies: 3.5
+### Description: Ensure that user sessions are managed using Supabase Auth, leveraging the Podio OAuth tokens for authentication and session persistence.
+### Details:
+Map Podio-authenticated users to Supabase Auth users. Handle session creation, validation, and termination securely.
+
+## 7. Test and Validate the Complete Integration [pending]
+### Dependencies: 3.6
+### Description: Conduct comprehensive testing of the entire authentication flow, including edge cases, error handling, and security validation.
+### Details:
+Perform automated and manual tests for login, logout, token refresh, and user data sync. Validate security and compliance with OAuth best practices.
+

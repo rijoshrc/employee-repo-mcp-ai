@@ -1,0 +1,11 @@
+# Task ID: 14
+# Title: Comprehensive Testing: Unit, Integration, and E2E
+# Status: pending
+# Dependencies: 4, 5, 6, 7, 8, 9, 10, 11, 12
+# Priority: high
+# Description: Develop and run comprehensive tests using Jest, React Testing Library, and Playwright for all components and APIs.
+# Details:
+Write unit tests for all modules. Implement integration tests for API routes and database. Use Playwright for end-to-end UI testing (including accessibility and mobile). Set up CI pipeline for automated test runs.
+
+# Test Strategy:
+Achieve >90% code coverage. Run all tests on CI. Manual exploratory testing for edge cases.

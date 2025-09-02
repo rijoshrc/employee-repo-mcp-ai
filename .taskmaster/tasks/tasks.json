@@ -1,0 +1,1411 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initialize Next.js 15 Project with TypeScript and Tailwind CSS",
+        "description": "Set up the foundational frontend project using Next.js 15, TypeScript, and Tailwind CSS, ensuring shadcn/ui is integrated for UI components.",
+        "details": "Use `npx create-next-app@latest` with TypeScript template. Install Tailwind CSS (`^3.4.1`), shadcn/ui, and configure PostCSS. Set up a custom theme system using shadcn/ui's theming utilities. Ensure project structure supports modular components and responsive design.",
+        "testStrategy": "Verify project builds and runs locally. Check that Tailwind and shadcn/ui components render correctly. Confirm dark/light theme toggling works.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Next.js 15 Project with TypeScript",
+            "description": "Initialize a new Next.js 15 project using the TypeScript template to ensure type safety and modern React features.",
+            "dependencies": [],
+            "details": "Run `npx create-next-app@latest my-project --typescript --eslint --app` to scaffold the project with TypeScript and ESLint enabled.",
+            "status": "pending",
+            "testStrategy": "Verify project builds and runs with `npm run dev`. Confirm TypeScript is enabled by checking for `.ts` and `.tsx` files."
+          },
+          {
+            "id": 2,
+            "title": "Install Tailwind CSS and Configure PostCSS",
+            "description": "Add Tailwind CSS (v3.4.1 or newer) and configure PostCSS for utility-first styling.",
+            "dependencies": [
+              "1.1"
+            ],
+            "details": "Install Tailwind CSS and PostCSS dependencies. Create `postcss.config.mjs` and add Tailwind as a plugin. Import Tailwind in `app/globals.css`.",
+            "status": "pending",
+            "testStrategy": "Check that Tailwind classes apply correctly in sample components. Confirm PostCSS processes styles without errors."
+          },
+          {
+            "id": 3,
+            "title": "Integrate shadcn/ui Library",
+            "description": "Install and set up shadcn/ui for reusable UI components compatible with Next.js 15 and Tailwind CSS.",
+            "dependencies": [
+              "1.2"
+            ],
+            "details": "Install shadcn/ui via npm. Configure shadcn/ui according to documentation for Next.js 15 and Tailwind CSS integration.",
+            "status": "pending",
+            "testStrategy": "Render a sample shadcn/ui component and verify correct styling and functionality."
+          },
+          {
+            "id": 4,
+            "title": "Configure Tailwind CSS Theme and Customization",
+            "description": "Extend Tailwind CSS configuration to support custom colors, fonts, and breakpoints for the project's design system.",
+            "dependencies": [
+              "1.2"
+            ],
+            "details": "Edit `tailwind.config.ts` to add custom theme values (colors, fonts, spacing). Import desired fonts in `app/layout.tsx` using `next/font/google`.",
+            "status": "pending",
+            "testStrategy": "Apply custom theme classes in components and verify visual changes. Check font imports render correctly."
+          },
+          {
+            "id": 5,
+            "title": "Set Up shadcn/ui Theming Utilities",
+            "description": "Implement shadcn/ui's theming utilities to enable dark/light mode and custom theme support.",
+            "dependencies": [
+              "1.3",
+              "1.4"
+            ],
+            "details": "Add ThemeProvider and ThemeToggle components from shadcn/ui. Wrap the app in ThemeProvider in `app/layout.tsx`.",
+            "status": "pending",
+            "testStrategy": "Toggle between dark and light themes and confirm UI updates. Verify theme persists across navigation."
+          },
+          {
+            "id": 6,
+            "title": "Organize Modular Component Structure",
+            "description": "Establish a scalable folder structure for modular React components, ensuring separation of concerns and reusability.",
+            "dependencies": [
+              "1.1"
+            ],
+            "details": "Create `components/` directory. Define base UI components and organize them by feature or domain.",
+            "status": "pending",
+            "testStrategy": "Import and use components in pages. Confirm modularity and reusability by composing components."
+          },
+          {
+            "id": 7,
+            "title": "Implement Responsive Design",
+            "description": "Ensure all components and layouts are responsive using Tailwind CSS utilities and best practices.",
+            "dependencies": [
+              "1.4",
+              "1.6"
+            ],
+            "details": "Apply Tailwind's responsive classes (e.g., `md:`, `lg:`) to layouts and components. Test on various screen sizes.",
+            "status": "pending",
+            "testStrategy": "Manually test UI on desktop and mobile. Use browser dev tools to simulate different viewports."
+          },
+          {
+            "id": 8,
+            "title": "Verify Initial Project Setup and UI Integration",
+            "description": "Test the complete setup to ensure Next.js, TypeScript, Tailwind CSS, and shadcn/ui work together seamlessly.",
+            "dependencies": [
+              "1.3",
+              "1.5",
+              "1.7"
+            ],
+            "details": "Run the development server. Render sample pages and components using all integrated technologies. Check for build errors and UI issues.",
+            "status": "pending",
+            "testStrategy": "Confirm project builds and runs locally. Verify Tailwind and shadcn/ui components render correctly. Test dark/light theme toggling and responsiveness."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Configure Supabase Project and PostgreSQL Database",
+        "description": "Provision Supabase project, set up PostgreSQL database, enable Row Level Security (RLS), and define initial schema for users, chat sessions, messages, and Podio cache.",
+        "details": "Create Supabase project. Define tables: users, chat_sessions, messages, podio_cache, files, system_settings. Enable RLS on all tables. Use Supabase SQL editor for schema migration. Set up Supabase Storage for file uploads.",
+        "testStrategy": "Write integration tests to verify RLS policies. Use Supabase dashboard to confirm schema and permissions. Test file upload and retrieval.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Provision Supabase Project",
+            "description": "Create a new Supabase project using the Supabase dashboard, ensuring the project is initialized and accessible.",
+            "dependencies": [],
+            "details": "Sign up or log in to Supabase, create a new project, and note the project URL and API keys for later configuration.",
+            "status": "pending",
+            "testStrategy": "Verify project creation by accessing the Supabase dashboard and confirming project visibility."
+          },
+          {
+            "id": 2,
+            "title": "Set Up PostgreSQL Database Schema",
+            "description": "Define the initial PostgreSQL schema using the Supabase SQL editor, including tables for users, chat_sessions, messages, podio_cache, files, and system_settings.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Write and execute SQL migration scripts in the Supabase SQL editor to create all required tables with appropriate columns and data types.",
+            "status": "pending",
+            "testStrategy": "Check the Supabase dashboard to confirm all tables exist with correct structure."
+          },
+          {
+            "id": 3,
+            "title": "Enable Row Level Security (RLS) on All Tables",
+            "description": "Activate Row Level Security for each table and define default RLS policies to restrict data access.",
+            "dependencies": [
+              "2.2"
+            ],
+            "details": "Enable RLS via the Supabase dashboard or SQL commands, and add basic RLS policies (e.g., authenticated users can only access their own records).",
+            "status": "pending",
+            "testStrategy": "Write integration tests to verify RLS enforcement and attempt unauthorized access to ensure policies are effective."
+          },
+          {
+            "id": 4,
+            "title": "Configure Supabase Storage for File Uploads",
+            "description": "Set up Supabase Storage buckets to support file uploads and retrieval for the application.",
+            "dependencies": [
+              "2.1"
+            ],
+            "details": "Create storage buckets in the Supabase dashboard, configure access policies, and link storage to the files table.",
+            "status": "pending",
+            "testStrategy": "Upload and retrieve test files using the Supabase dashboard and API to confirm correct configuration."
+          },
+          {
+            "id": 5,
+            "title": "Define and Apply Schema Migration Scripts",
+            "description": "Organize and apply schema migration scripts using the Supabase SQL editor to ensure reproducible database setup.",
+            "dependencies": [
+              "2.2"
+            ],
+            "details": "Store all schema definitions and changes as SQL migration scripts, and apply them in the correct order using the Supabase SQL editor.",
+            "status": "pending",
+            "testStrategy": "Re-run migrations on a fresh project to confirm schema is reproducible and consistent."
+          },
+          {
+            "id": 6,
+            "title": "Verify Permissions and Schema via Supabase Dashboard",
+            "description": "Review and confirm that all tables, RLS policies, and storage settings are correctly configured using the Supabase dashboard.",
+            "dependencies": [
+              "2.3",
+              "2.4",
+              "2.5"
+            ],
+            "details": "Manually inspect the Supabase dashboard to ensure all schema elements and security policies are in place and functioning as intended.",
+            "status": "pending",
+            "testStrategy": "Perform manual and automated checks for schema correctness, RLS enforcement, and storage access."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Implement Supabase Auth with Podio OAuth Integration",
+        "description": "Integrate Supabase Auth with custom Podio OAuth provider for secure user authentication and session management.",
+        "details": "Use Supabase Auth's external OAuth provider support. Implement Podio OAuth 2.0 flow (per Podio API docs). Store and refresh tokens securely. Sync user profile data from Podio on login. Use environment variables for client secrets.",
+        "testStrategy": "Automated tests for login, logout, and token refresh. Manual test with real Podio account. Verify user data is synced and session persists.",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Register Podio OAuth App and Configure Credentials",
+            "description": "Create a new OAuth application in Podio, obtain the client ID and secret, and configure the necessary redirect URIs for Supabase integration.",
+            "dependencies": [],
+            "details": "Follow Podio API documentation to register the app. Store client credentials securely using environment variables as per best practices.",
+            "status": "pending",
+            "testStrategy": "Verify that the OAuth app is registered and credentials are accessible via environment variables."
+          },
+          {
+            "id": 2,
+            "title": "Enable and Configure Custom OAuth Provider in Supabase Auth",
+            "description": "Set up Supabase Auth to use Podio as an external OAuth provider by entering the client ID, secret, and redirect URIs in the Supabase dashboard.",
+            "dependencies": [
+              "3.1"
+            ],
+            "details": "Use Supabase's external OAuth provider support to add Podio, referencing the provider configuration section in Supabase settings.",
+            "status": "pending",
+            "testStrategy": "Check that the Podio provider appears in the Supabase Auth providers list and that configuration values are correct."
+          },
+          {
+            "id": 3,
+            "title": "Implement Podio OAuth 2.0 Authorization Flow",
+            "description": "Develop the frontend and backend logic to initiate and handle the Podio OAuth 2.0 flow, including redirecting users and handling authorization callbacks.",
+            "dependencies": [
+              "3.2"
+            ],
+            "details": "Use the PKCE flow if supported. Store the code verifier in the session and handle the authorization code exchange securely.",
+            "status": "pending",
+            "testStrategy": "Automated and manual tests to ensure users can complete the OAuth flow and receive tokens."
+          },
+          {
+            "id": 4,
+            "title": "Securely Store and Refresh Podio OAuth Tokens",
+            "description": "Implement secure storage for access and refresh tokens, and set up logic to refresh tokens as needed using Supabase backend functions.",
+            "dependencies": [
+              "3.3"
+            ],
+            "details": "Ensure tokens are never exposed to the client. Use Supabase Edge Functions or server-side logic for token refresh and storage.",
+            "status": "pending",
+            "testStrategy": "Automated tests for token storage, retrieval, and refresh. Manual test to verify tokens are not accessible from the client."
+          },
+          {
+            "id": 5,
+            "title": "Sync User Profile Data from Podio on Login",
+            "description": "Fetch and update user profile data from Podio each time a user logs in or refreshes their session.",
+            "dependencies": [
+              "3.4"
+            ],
+            "details": "Call Podio API endpoints to retrieve user profile information and update Supabase user records accordingly.",
+            "status": "pending",
+            "testStrategy": "Automated tests to verify profile data is fetched and stored. Manual test to confirm data accuracy after login."
+          },
+          {
+            "id": 6,
+            "title": "Integrate Session Management with Supabase Auth",
+            "description": "Ensure that user sessions are managed using Supabase Auth, leveraging the Podio OAuth tokens for authentication and session persistence.",
+            "dependencies": [
+              "3.5"
+            ],
+            "details": "Map Podio-authenticated users to Supabase Auth users. Handle session creation, validation, and termination securely.",
+            "status": "pending",
+            "testStrategy": "Automated tests for login, logout, and session persistence. Manual test to verify session continuity."
+          },
+          {
+            "id": 7,
+            "title": "Test and Validate the Complete Integration",
+            "description": "Conduct comprehensive testing of the entire authentication flow, including edge cases, error handling, and security validation.",
+            "dependencies": [
+              "3.6"
+            ],
+            "details": "Perform automated and manual tests for login, logout, token refresh, and user data sync. Validate security and compliance with OAuth best practices.",
+            "status": "pending",
+            "testStrategy": "Run automated test suite and perform manual tests with real Podio accounts. Review logs and session data for correctness."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Design and Implement Modular Chat UI",
+        "description": "Build a real-time chat interface using shadcn/ui, supporting message history, typing indicators, and responsive design.",
+        "details": "Create modular React components for chat window, message list, input box, and typing indicator. Use shadcn/ui primitives. Implement dark/light theme toggle. Ensure accessibility (keyboard navigation, ARIA roles). Use Tailwind for layout.",
+        "testStrategy": "Unit and snapshot tests for UI components (React Testing Library). Accessibility audit using axe. Manual test on mobile and desktop.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set Up Project with shadcn/ui and Tailwind CSS",
+            "description": "Initialize the React project and configure shadcn/ui and Tailwind CSS for component styling and layout.",
+            "dependencies": [],
+            "details": "Install shadcn/ui and Tailwind CSS. Set up Tailwind configuration and ensure shadcn/ui primitives are available for use in the project.",
+            "status": "pending",
+            "testStrategy": "Verify successful build and that shadcn/ui and Tailwind classes render correctly in a sample component."
+          },
+          {
+            "id": 2,
+            "title": "Design Modular Chat Window Component Structure",
+            "description": "Define the modular structure for the chat UI, including chat window, message list, input box, and typing indicator components.",
+            "dependencies": [
+              "4.1"
+            ],
+            "details": "Create a component hierarchy and interface contracts for each UI part, ensuring separation of concerns and reusability.",
+            "status": "pending",
+            "testStrategy": "Review component tree and props contracts; ensure each component can be rendered in isolation."
+          },
+          {
+            "id": 3,
+            "title": "Implement Chat Window and Message List Components",
+            "description": "Develop the chat window and message list components using shadcn/ui primitives and Tailwind for responsive layout.",
+            "dependencies": [
+              "4.2"
+            ],
+            "details": "Build the main chat container and message list, supporting scroll, message grouping, and responsive resizing.",
+            "status": "pending",
+            "testStrategy": "Unit and snapshot tests for rendering, scroll behavior, and responsiveness on different screen sizes."
+          },
+          {
+            "id": 4,
+            "title": "Develop Chat Input Box with Message Sending",
+            "description": "Create the chat input component, supporting message composition, submission, and keyboard accessibility.",
+            "dependencies": [
+              "4.2"
+            ],
+            "details": "Use shadcn/ui input primitives. Implement keyboard shortcuts (Enter to send, Shift+Enter for newline) and ARIA roles.",
+            "status": "pending",
+            "testStrategy": "Unit tests for input behavior, keyboard navigation, and accessibility audit with axe."
+          },
+          {
+            "id": 5,
+            "title": "Add Typing Indicator Component",
+            "description": "Implement a typing indicator that displays when a user or bot is typing, using shadcn/ui and Tailwind.",
+            "dependencies": [
+              "4.2"
+            ],
+            "details": "Design a visually distinct typing indicator. Ensure it updates in real time and is accessible to screen readers.",
+            "status": "pending",
+            "testStrategy": "Unit tests for indicator visibility and ARIA live region compliance."
+          },
+          {
+            "id": 6,
+            "title": "Integrate Message History and Real-Time Updates",
+            "description": "Enable real-time message updates and display message history within the chat window.",
+            "dependencies": [
+              "4.3",
+              "4.4",
+              "4.5"
+            ],
+            "details": "Connect components to a chat state manager (e.g., useChat or custom hook). Support initial message loading and live updates.",
+            "status": "pending",
+            "testStrategy": "Integration tests for message flow, history loading, and real-time updates."
+          },
+          {
+            "id": 7,
+            "title": "Implement Dark/Light Theme Toggle",
+            "description": "Add a theme toggle to switch between dark and light modes, leveraging shadcn/ui theming capabilities.",
+            "dependencies": [
+              "4.1"
+            ],
+            "details": "Use shadcn/ui's theme system and Tailwind's dark mode support. Ensure all components adapt to theme changes.",
+            "status": "pending",
+            "testStrategy": "Snapshot tests for both themes and manual verification of theme switching."
+          },
+          {
+            "id": 8,
+            "title": "Ensure Accessibility and Responsive Design",
+            "description": "Audit and enhance accessibility (keyboard navigation, ARIA roles) and ensure the chat UI is fully responsive.",
+            "dependencies": [
+              "4.3",
+              "4.4",
+              "4.5",
+              "4.7"
+            ],
+            "details": "Conduct accessibility audit using axe. Refine Tailwind layouts for mobile and desktop. Add missing ARIA attributes and keyboard support.",
+            "status": "pending",
+            "testStrategy": "Accessibility audit with axe, manual keyboard navigation test, and responsive checks on multiple devices."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Set Up Supabase Realtime for Live Chat Updates",
+        "description": "Enable real-time chat updates, typing indicators, and user presence using Supabase Realtime.",
+        "details": "Subscribe to changes in messages and chat_sessions tables using Supabase Realtime client. Implement typing indicator logic with ephemeral presence channels. Handle connection status and automatic reconnection.",
+        "testStrategy": "Simulate multiple users and verify real-time updates. Automated tests for presence and typing events. Manual test for latency (<100ms).",
+        "priority": "high",
+        "dependencies": [
+          2,
+          4
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Supabase Realtime Client in Project",
+            "description": "Set up and configure the Supabase Realtime client within the chat application, ensuring environment variables are securely loaded.",
+            "dependencies": [],
+            "details": "Import Supabase client libraries, configure with project URL and public key, and verify connection to Supabase Realtime.",
+            "status": "pending",
+            "testStrategy": "Confirm client initialization and successful connection using test credentials."
+          },
+          {
+            "id": 2,
+            "title": "Subscribe to Messages Table for Real-Time Updates",
+            "description": "Implement subscription logic to listen for inserts, updates, and deletes in the messages table using Supabase Realtime.",
+            "dependencies": [
+              "5.1"
+            ],
+            "details": "Use Supabase Realtime channel to subscribe to changes in the messages table and update chat UI accordingly.",
+            "status": "pending",
+            "testStrategy": "Simulate message creation, update, and deletion; verify UI reflects changes instantly."
+          },
+          {
+            "id": 3,
+            "title": "Subscribe to Chat Sessions Table for Session Events",
+            "description": "Set up real-time listeners for changes in the chat_sessions table to track session creation, updates, and closure.",
+            "dependencies": [
+              "5.1"
+            ],
+            "details": "Subscribe to chat_sessions table events and update session state in the frontend as needed.",
+            "status": "pending",
+            "testStrategy": "Create, update, and close chat sessions; verify session state updates in real time."
+          },
+          {
+            "id": 4,
+            "title": "Implement Ephemeral Presence Channels for User Presence",
+            "description": "Configure ephemeral presence channels to track which users are online and present in each chat room.",
+            "dependencies": [
+              "5.1"
+            ],
+            "details": "Use Supabase presence API to broadcast and listen for user join/leave events within chat rooms.",
+            "status": "pending",
+            "testStrategy": "Simulate users joining and leaving; verify presence indicators update correctly."
+          },
+          {
+            "id": 5,
+            "title": "Implement Typing Indicator Logic Using Presence Channels",
+            "description": "Enable real-time typing indicators by broadcasting typing events through ephemeral presence channels.",
+            "dependencies": [
+              "5.4"
+            ],
+            "details": "Emit and listen for typing events; update UI to show when users are actively typing.",
+            "status": "pending",
+            "testStrategy": "Simulate multiple users typing; verify typing indicators appear and disappear with minimal latency."
+          },
+          {
+            "id": 6,
+            "title": "Handle Connection Status and Automatic Reconnection",
+            "description": "Detect connection status changes and implement automatic reconnection logic for Supabase Realtime channels.",
+            "dependencies": [
+              "5.1"
+            ],
+            "details": "Monitor connection state, display status to users, and attempt reconnection on disconnect.",
+            "status": "pending",
+            "testStrategy": "Simulate network interruptions; verify reconnection and state restoration."
+          },
+          {
+            "id": 7,
+            "title": "Integrate Real-Time Event Handlers with Chat UI Components",
+            "description": "Connect real-time event listeners to chat UI components for seamless updates and user feedback.",
+            "dependencies": [
+              "5.2",
+              "5.3",
+              "5.5",
+              "5.6"
+            ],
+            "details": "Ensure message, session, presence, and typing events trigger appropriate UI updates.",
+            "status": "pending",
+            "testStrategy": "Perform end-to-end manual and automated UI tests for all real-time features."
+          },
+          {
+            "id": 8,
+            "title": "Test and Validate Real-Time Chat Functionality",
+            "description": "Simulate multiple users and validate all real-time chat features, including latency, presence, and typing indicators.",
+            "dependencies": [
+              "5.7"
+            ],
+            "details": "Run automated and manual tests to ensure real-time updates, presence, and typing indicators work reliably under load.",
+            "status": "pending",
+            "testStrategy": "Automated tests for message, presence, and typing events; manual latency test (<100ms) with multiple users."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Develop Next.js API Routes for Chat and Podio Integration",
+        "description": "Create secure API routes for chat session management, message handling, and Podio data proxying via MCP server.",
+        "details": "Implement RESTful endpoints under `/api/chat` and `/api/podio`. Use Next.js API routes with TypeScript. Enforce authentication and RLS checks. Proxy Podio API calls through MCP server with token validation.",
+        "testStrategy": "Integration tests for all endpoints (Jest + Supertest). Security tests for RLS and token handling. Manual test with Postman.",
+        "priority": "high",
+        "dependencies": [
+          3,
+          2
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design API Route Structure for Chat and Podio",
+            "description": "Define the RESTful endpoint structure under `/api/chat` and `/api/podio`, including route naming, HTTP methods, and dynamic segments for session and message management.",
+            "dependencies": [],
+            "details": "Specify endpoints for chat session CRUD, message handling, and Podio proxying. Use Next.js API route conventions and TypeScript file structure.",
+            "status": "pending",
+            "testStrategy": "Review endpoint map for completeness and RESTful compliance."
+          },
+          {
+            "id": 2,
+            "title": "Implement Authentication Middleware",
+            "description": "Develop middleware to enforce authentication on all API routes, integrating with Supabase Auth and validating user sessions.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "Ensure all requests to `/api/chat` and `/api/podio` require valid authentication tokens. Reject unauthorized requests with appropriate status codes.",
+            "status": "pending",
+            "testStrategy": "Automated tests for authenticated and unauthenticated access; manual token tampering tests."
+          },
+          {
+            "id": 3,
+            "title": "Enforce Row-Level Security (RLS) Checks",
+            "description": "Integrate RLS logic to restrict data access based on user roles and permissions for chat and Podio-related data.",
+            "dependencies": [
+              "6.2"
+            ],
+            "details": "Apply RLS policies after authentication, ensuring users can only access or modify resources they are authorized for.",
+            "status": "pending",
+            "testStrategy": "Integration tests for RLS enforcement; attempt access with different user roles."
+          },
+          {
+            "id": 4,
+            "title": "Develop Chat Session Management Endpoints",
+            "description": "Implement endpoints for creating, retrieving, updating, and deleting chat sessions using Next.js API routes and TypeScript.",
+            "dependencies": [
+              "6.3"
+            ],
+            "details": "Support session lifecycle operations with proper validation and error handling. Use TypeScript types for request and response payloads.",
+            "status": "pending",
+            "testStrategy": "Integration tests for all session endpoints; error scenario coverage."
+          },
+          {
+            "id": 5,
+            "title": "Implement Message Handling Endpoints",
+            "description": "Create endpoints for sending, retrieving, and deleting chat messages, ensuring secure and efficient message operations.",
+            "dependencies": [
+              "6.4"
+            ],
+            "details": "Support message CRUD with validation, RLS checks, and TypeScript typing. Handle edge cases such as invalid sessions or message formats.",
+            "status": "pending",
+            "testStrategy": "Integration and security tests for message endpoints; test invalid payloads."
+          },
+          {
+            "id": 6,
+            "title": "Proxy Podio API Calls via MCP Server",
+            "description": "Develop endpoints under `/api/podio` that securely proxy requests to the MCP server, handling token validation and error propagation.",
+            "dependencies": [
+              "6.3"
+            ],
+            "details": "Forward Podio API requests to MCP, attach validated tokens, and relay responses. Handle errors and rate limits gracefully.",
+            "status": "pending",
+            "testStrategy": "Integration tests with mocked MCP server; test token validation and error handling."
+          },
+          {
+            "id": 7,
+            "title": "Integrate TypeScript Types and Validation",
+            "description": "Define and apply TypeScript interfaces for all API request and response payloads, and implement runtime validation where necessary.",
+            "dependencies": [
+              "6.4",
+              "6.5",
+              "6.6"
+            ],
+            "details": "Ensure type safety across all endpoints. Use libraries like Zod or Yup for runtime validation of incoming data.",
+            "status": "pending",
+            "testStrategy": "Type-checking in CI; unit tests for validation logic."
+          },
+          {
+            "id": 8,
+            "title": "Implement and Document API Security Measures",
+            "description": "Document and enforce security best practices, including input sanitization, error handling, and secure token management for all API routes.",
+            "dependencies": [
+              "6.7"
+            ],
+            "details": "Review all endpoints for security vulnerabilities. Document authentication, RLS, and proxying mechanisms for future maintenance.",
+            "status": "pending",
+            "testStrategy": "Security audit; penetration testing; review documentation for completeness."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Implement MCP Server for Podio API Communication",
+        "description": "Develop a custom MCP server to handle Podio API requests, tool selection, and access validation.",
+        "details": "Build Node.js server (Express or Fastify) with endpoints for each MCP tool (get_item_basic, get_item_full, get_comments, etc.). Use official Podio JavaScript SDK (`podio-js` v2.x). Implement OAuth token management, rate limit handling, and error logging.",
+        "testStrategy": "Unit and integration tests for each MCP endpoint. Mock Podio API for error scenarios. Monitor rate limits and retry logic.",
+        "priority": "high",
+        "dependencies": [
+          6
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design MCP Server Architecture and Endpoint Specification",
+            "description": "Define the overall architecture of the MCP server, select the Node.js framework (Express or Fastify), and specify REST endpoints for each MCP tool (e.g., get_item_basic, get_item_full, get_comments).",
+            "dependencies": [],
+            "details": "Document the API contract for each endpoint, including input/output schemas, authentication requirements, and error responses. Ensure endpoints align with Podio API capabilities and MCP protocol expectations.",
+            "status": "pending",
+            "testStrategy": "Review endpoint specifications with stakeholders. Validate API contract using mock requests and OpenAPI documentation tools."
+          },
+          {
+            "id": 2,
+            "title": "Integrate Podio JavaScript SDK and Implement Core MCP Tool Handlers",
+            "description": "Install and configure the official Podio JavaScript SDK (`podio-js` v2.x). Implement handler functions for each MCP tool endpoint to interact with the Podio API.",
+            "dependencies": [
+              "7.1"
+            ],
+            "details": "Ensure each handler correctly maps request parameters to Podio SDK calls, handles Podio API responses, and returns standardized MCP responses.",
+            "status": "pending",
+            "testStrategy": "Write unit tests for each handler using mocked Podio SDK responses. Verify correct data mapping and error handling."
+          },
+          {
+            "id": 3,
+            "title": "Implement OAuth Token Management and Secure Storage",
+            "description": "Develop logic for acquiring, refreshing, and securely storing Podio OAuth tokens for API access. Ensure tokens are never exposed to clients.",
+            "dependencies": [
+              "7.2"
+            ],
+            "details": "Integrate with existing authentication flows if available. Use environment variables or secure server-side storage for client secrets and tokens.",
+            "status": "pending",
+            "testStrategy": "Test token acquisition and refresh flows. Simulate token expiration and verify automatic refresh. Check for token leakage in logs and responses."
+          },
+          {
+            "id": 4,
+            "title": "Add Access Validation and Authorization Logic",
+            "description": "Implement middleware or endpoint-level checks to validate user access and permissions for each MCP tool request.",
+            "dependencies": [
+              "7.3"
+            ],
+            "details": "Leverage Podio API's permission model and any custom business logic to enforce access control. Return appropriate error codes for unauthorized access.",
+            "status": "pending",
+            "testStrategy": "Write tests for authorized and unauthorized scenarios. Attempt access with insufficient permissions and verify correct error responses."
+          },
+          {
+            "id": 5,
+            "title": "Implement Rate Limit Handling and Error Logging",
+            "description": "Detect and handle Podio API rate limits gracefully. Implement structured error logging for all MCP endpoints, including API errors and internal exceptions.",
+            "dependencies": [
+              "7.4"
+            ],
+            "details": "Monitor Podio API rate limit headers, implement retry logic with exponential backoff, and log all errors with sufficient context for debugging.",
+            "status": "pending",
+            "testStrategy": "Simulate rate limit exceedance and verify retry/backoff behavior. Check logs for completeness and clarity during error scenarios."
+          },
+          {
+            "id": 6,
+            "title": "Develop Automated Tests and Mock Podio API for Integration Testing",
+            "description": "Create unit and integration tests for all MCP endpoints, using a mocked Podio API to simulate success and error scenarios.",
+            "dependencies": [
+              "7.5"
+            ],
+            "details": "Ensure tests cover all endpoint behaviors, including edge cases, error handling, and rate limit scenarios. Use test doubles for Podio SDK interactions.",
+            "status": "pending",
+            "testStrategy": "Run automated test suite on each commit. Review code coverage and add tests for uncovered paths. Validate behavior against real Podio API in staging."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Integrate Google Gemini AI for Query Analysis and Response Generation",
+        "description": "Connect to Google Gemini AI (Pro/Flash) for natural language query analysis, tool selection, and contextual response generation.",
+        "details": "Use Google Gemini API (latest stable version). Implement prompt engineering for context-aware queries. Support model selection (Flash, Pro). Track token usage. Fallback to default responses on errors.",
+        "testStrategy": "Unit tests for AI integration. Manual test with diverse queries. Monitor token usage and error rates.",
+        "priority": "high",
+        "dependencies": [
+          7
+        ],
+        "status": "pending",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set Up Google Gemini API Access",
+            "description": "Obtain a Gemini API key, create a Google Cloud project, and enable the Gemini API for integration.",
+            "dependencies": [],
+            "details": "Register on Google Cloud Platform, create a new project, enable Gemini API, and securely generate and store the API key required for authentication.",
+            "status": "pending",
+            "testStrategy": "Verify API key validity by making a test request using the SDK or cURL."
+          },
+          {
+            "id": 2,
+            "title": "Install and Configure Gemini SDK",
+            "description": "Install the official Gemini SDK for the target programming language and configure authentication using the API key.",
+            "dependencies": [
+              "8.1"
+            ],
+            "details": "Use package managers (npm, pip, etc.) to install the Gemini SDK. Configure the SDK to use the API key via environment variables or secure storage.",
+            "status": "pending",
+            "testStrategy": "Run sample code to confirm SDK installation and authentication setup."
+          },
+          {
+            "id": 3,
+            "title": "Implement Model Selection Logic",
+            "description": "Develop logic to support dynamic selection between Gemini Flash and Pro models based on query context or user preference.",
+            "dependencies": [
+              "8.2"
+            ],
+            "details": "Expose configuration options or API parameters to select between 'gemini-1.5-flash' and 'gemini-1.5-pro' models for each request.",
+            "status": "pending",
+            "testStrategy": "Unit test model selection with various inputs and verify correct model invocation."
+          },
+          {
+            "id": 4,
+            "title": "Design and Apply Prompt Engineering Strategies",
+            "description": "Create and refine prompt templates to ensure context-aware query analysis and optimal response generation.",
+            "dependencies": [
+              "8.3"
+            ],
+            "details": "Develop reusable prompt templates and logic to inject relevant context, user intent, and tool selection cues into requests sent to Gemini.",
+            "status": "pending",
+            "testStrategy": "Manual and automated tests with diverse queries to evaluate response relevance and contextual accuracy."
+          },
+          {
+            "id": 5,
+            "title": "Integrate Token Usage Tracking",
+            "description": "Implement mechanisms to monitor and log token usage for each Gemini API request to support cost management and rate limiting.",
+            "dependencies": [
+              "8.4"
+            ],
+            "details": "Capture token usage metrics from API responses and store them for analysis. Alert or restrict usage if thresholds are exceeded.",
+            "status": "pending",
+            "testStrategy": "Simulate high-frequency requests and verify accurate token usage logging and threshold enforcement."
+          },
+          {
+            "id": 6,
+            "title": "Implement Error Handling and Fallback Logic",
+            "description": "Develop robust error handling to detect Gemini API failures and provide default fallback responses to maintain service continuity.",
+            "dependencies": [
+              "8.5"
+            ],
+            "details": "Detect API errors, timeouts, or invalid responses. Return predefined fallback answers or escalate errors as needed.",
+            "status": "pending",
+            "testStrategy": "Force error scenarios and verify fallback response delivery and error logging."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Implement Chat Session and Message Persistence with Supabase",
+        "description": "Persist chat sessions and messages in Supabase PostgreSQL, supporting per-item chat history and efficient retrieval.",
+        "details": "Design efficient queries for session and message retrieval. Implement pagination for large histories. Use Supabase client with RLS policies. Index tables for performance.",
+        "testStrategy": "Load tests for large datasets (1000+ messages). Verify RLS enforcement. Automated tests for CRUD operations.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          4,
+          5
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 10,
+        "title": "Implement Data Caching, Compression, and Smart Pagination",
+        "description": "Optimize performance for large datasets using intelligent caching, data compression, and progressive loading.",
+        "details": "Use Supabase cache table for Podio data. Implement LRU or time-based cache eviction. Compress large payloads (e.g., using pako or zlib). Implement cursor-based pagination for chat and Podio data.",
+        "testStrategy": "Benchmark cache hit/miss rates. Test compression/decompression. Load test with large datasets.",
+        "priority": "medium",
+        "dependencies": [
+          7,
+          9
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 11,
+        "title": "Implement File and Metadata Management with Supabase Storage",
+        "description": "Enable file uploads, downloads, and metadata extraction for Podio items using Supabase Storage.",
+        "details": "Integrate Supabase Storage SDK. Store file metadata in files table. Support file previews and secure download URLs. Enforce access control via RLS.",
+        "testStrategy": "Upload/download tests for various file types. Verify metadata extraction. Security tests for access control.",
+        "priority": "medium",
+        "dependencies": [
+          2,
+          6
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 12,
+        "title": "Implement Security, RLS, and Audit Logging",
+        "description": "Enforce security best practices, including Row Level Security, encrypted data transmission, secure token handling, and audit logging.",
+        "details": "Review and harden all RLS policies. Use HTTPS for all endpoints. Store tokens securely (never in client). Implement audit logging for authentication and data access events. Use Supabase's built-in logging and custom triggers.",
+        "testStrategy": "Penetration testing. Automated tests for RLS bypass attempts. Manual review of audit logs.",
+        "priority": "high",
+        "dependencies": [
+          3,
+          6,
+          9
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 13,
+        "title": "Implement Monitoring, Alerting, and Performance Optimization",
+        "description": "Set up monitoring for uptime, error rates, and performance metrics. Implement alerting and optimize for scalability.",
+        "details": "Integrate with Vercel Analytics, Supabase logs, and external monitoring (e.g., Sentry, Datadog). Set up alerts for downtime and critical errors. Profile database queries and API endpoints. Enable auto-scaling and CDN for static assets.",
+        "testStrategy": "Simulate failures and verify alerts. Monitor performance under load. Review analytics dashboards.",
+        "priority": "medium",
+        "dependencies": [
+          12
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 14,
+        "title": "Comprehensive Testing: Unit, Integration, and E2E",
+        "description": "Develop and run comprehensive tests using Jest, React Testing Library, and Playwright for all components and APIs.",
+        "details": "Write unit tests for all modules. Implement integration tests for API routes and database. Use Playwright for end-to-end UI testing (including accessibility and mobile). Set up CI pipeline for automated test runs.",
+        "testStrategy": "Achieve >90% code coverage. Run all tests on CI. Manual exploratory testing for edge cases.",
+        "priority": "high",
+        "dependencies": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 15,
+        "title": "Deployment, Backup, and User Acceptance Testing",
+        "description": "Deploy application to Vercel, configure backups, and conduct user acceptance testing (UAT) with target users.",
+        "details": "Set up Vercel deployment with environment variables. Enable Supabase automated backups. Prepare UAT scripts and collect feedback. Iterate based on user input.",
+        "testStrategy": "Verify deployment stability. Restore from backup in test environment. Collect and analyze UAT feedback.",
+        "priority": "medium",
+        "dependencies": [
+          13,
+          14
+        ],
+        "status": "pending",
+        "subtasks": []
+      },
+      {
+        "id": 16,
+        "title": "Implement Dashboard and Navigation System",
+        "description": "Develop a comprehensive dashboard with sidebar navigation, recent chats list, quick start actions, user profile management, breadcrumbs, and responsive mobile navigation.",
+        "details": "Design the dashboard layout using modular React components, leveraging shadcn/ui and Tailwind CSS for consistent styling and responsiveness. Implement a sidebar with navigation links to core sections (e.g., Dashboard, Chats, Profile, Settings), and ensure it collapses or adapts for mobile devices. Integrate a recent chats list by querying persisted chat sessions from Supabase, displaying relevant metadata and supporting quick navigation. Add a quick start section for initiating new chats or workflows. Implement user profile management, allowing users to view and edit their profile synced from Podio. Add breadcrumbs to reflect the current navigation path. Ensure all navigation is accessible (keyboard navigation, ARIA roles) and supports both light and dark themes. Use Next.js routing for navigation logic, and ensure all data fetching is secure and respects RLS policies. Prioritize performance and usability, following dashboard UX best practices (clear hierarchy, minimal clutter, user-centered design).",
+        "testStrategy": "Verify that the dashboard renders correctly on desktop and mobile devices, with responsive sidebar and navigation elements. Test navigation flows between all major sections, ensuring breadcrumbs update accurately. Confirm recent chats list displays correct data and updates in real time. Test quick start actions for correct routing and initialization. Validate user profile management (view/edit) and ensure changes sync with Podio and Supabase. Perform accessibility audits (keyboard navigation, ARIA roles, color contrast). Conduct usability testing with representative users. Run automated and manual tests to ensure secure data access and correct enforcement of RLS policies.",
+        "status": "pending",
+        "dependencies": [
+          1,
+          3,
+          4,
+          9
+        ],
+        "priority": "high",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Modular Dashboard Layout",
+            "description": "Create the overall dashboard structure using modular React components, ensuring clear hierarchy and separation of concerns for maintainability and scalability.",
+            "dependencies": [],
+            "details": "Define the main layout, including header, sidebar, main content area, and footer. Use shadcn/ui and Tailwind CSS for consistent styling and responsive design.",
+            "status": "pending",
+            "testStrategy": "Verify that the dashboard layout renders correctly on various screen sizes and that components are modular and reusable."
+          },
+          {
+            "id": 2,
+            "title": "Implement Sidebar Navigation with Responsive Behavior",
+            "description": "Develop a sidebar containing navigation links to core sections (Dashboard, Chats, Profile, Settings), ensuring it collapses or adapts for mobile devices.",
+            "dependencies": [
+              "16.1"
+            ],
+            "details": "Use Tailwind CSS for responsive breakpoints and shadcn/ui for accessible navigation components. Integrate Next.js routing for navigation logic.",
+            "status": "pending",
+            "testStrategy": "Test sidebar expand/collapse on desktop and mobile. Confirm navigation links route to correct sections and sidebar is accessible via keyboard."
+          },
+          {
+            "id": 3,
+            "title": "Integrate Recent Chats List from Supabase",
+            "description": "Query persisted chat sessions from Supabase and display a recent chats list with relevant metadata, supporting quick navigation to chat sessions.",
+            "dependencies": [
+              "16.1",
+              "16.2"
+            ],
+            "details": "Implement secure data fetching with RLS policies. Display chat titles, timestamps, and unread indicators. Enable click-to-navigate for each chat.",
+            "status": "pending",
+            "testStrategy": "Verify recent chats list updates in real time, displays correct metadata, and supports navigation to selected chat."
+          },
+          {
+            "id": 4,
+            "title": "Add Quick Start Actions Section",
+            "description": "Implement a quick start section for initiating new chats or workflows, providing users with prominent, accessible actions.",
+            "dependencies": [
+              "16.1"
+            ],
+            "details": "Design quick action buttons using shadcn/ui and Tailwind CSS. Integrate with Next.js routing and relevant APIs to start new chats or workflows.",
+            "status": "pending",
+            "testStrategy": "Test that quick start actions are visible, accessible, and correctly initiate new chats or workflows."
+          },
+          {
+            "id": 5,
+            "title": "Implement User Profile Management Synced with Podio",
+            "description": "Allow users to view and edit their profile information, syncing changes with Podio and reflecting updates in the dashboard.",
+            "dependencies": [
+              "16.1"
+            ],
+            "details": "Fetch user profile data from Podio, display it in a profile section, and provide forms for editing. Ensure secure data handling and update propagation.",
+            "status": "pending",
+            "testStrategy": "Verify profile data loads correctly, edits are validated and saved, and changes sync with Podio."
+          },
+          {
+            "id": 6,
+            "title": "Add Breadcrumbs for Navigation Path",
+            "description": "Display breadcrumbs reflecting the current navigation path, updating dynamically as users navigate between sections.",
+            "dependencies": [
+              "16.2"
+            ],
+            "details": "Implement a breadcrumb component that integrates with Next.js routing and updates based on the current route.",
+            "status": "pending",
+            "testStrategy": "Test that breadcrumbs accurately reflect navigation state and update on route changes."
+          },
+          {
+            "id": 7,
+            "title": "Ensure Accessibility and Theming Support",
+            "description": "Implement accessibility features (keyboard navigation, ARIA roles) and support both light and dark themes throughout the dashboard.",
+            "dependencies": [
+              "16.1",
+              "16.2",
+              "16.3",
+              "16.4",
+              "16.5",
+              "16.6"
+            ],
+            "details": "Audit all components for accessibility compliance. Use shadcn/ui and Tailwind CSS theming utilities to enable theme switching.",
+            "status": "pending",
+            "testStrategy": "Test keyboard navigation, screen reader compatibility, and theme switching across all dashboard components."
+          },
+          {
+            "id": 8,
+            "title": "Optimize Performance and Usability",
+            "description": "Apply dashboard UX best practices, optimize data fetching, and ensure high performance and usability on all devices.",
+            "dependencies": [
+              "16.1",
+              "16.2",
+              "16.3",
+              "16.4",
+              "16.5",
+              "16.6",
+              "16.7"
+            ],
+            "details": "Implement efficient data loading (pagination, caching), minimize clutter, and follow user-centered design principles. Profile and optimize rendering performance.",
+            "status": "pending",
+            "testStrategy": "Benchmark dashboard load times, test responsiveness under load, and conduct usability testing for clarity and efficiency."
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "title": "Implement AI Query Analysis and MCP Tool Selection System",
+        "description": "Develop an intelligent system that leverages Gemini AI to analyze user queries, infer intent, and automatically select the appropriate MCP tools for Podio data operations, incorporating context management and conversation history analysis.",
+        "details": "Integrate Gemini AI (Pro/Flash) to process incoming user queries, using advanced prompt engineering to extract user intent and relevant entities. Design a query analysis pipeline that parses the user's natural language input, references recent conversation history, and maintains context across multi-turn interactions. Implement logic to map inferred intents to specific MCP tools (e.g., get_item_basic, get_comments, get_files) by defining a tool selection schema and decision rules. Ensure the system can handle ambiguous or compound queries by decomposing them and selecting multiple tools if needed. Store and retrieve conversation context and history from Supabase to inform tool selection and maintain continuity. Provide a transparent reasoning trace for tool selection to support debugging and future improvements. Ensure the system is extensible for new MCP tools and supports fallback or clarification prompts when intent is unclear.",
+        "testStrategy": "Create a comprehensive suite of test queries covering all supported MCP tools, including ambiguous, compound, and context-dependent questions. Simulate multi-turn conversations to verify context management and correct tool selection across turns. Validate that the system selects the correct MCP tool(s) for each query and provides reasoning traces. Test with edge cases such as incomplete queries, conflicting intents, and unsupported operations. Perform manual review of AI-generated intent mappings and tool selections. Monitor error rates and fallback scenarios. Ensure integration with Supabase for context persistence and retrieval functions as expected.",
+        "status": "pending",
+        "dependencies": [
+          7,
+          8,
+          9
+        ],
+        "priority": "high",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Integrate Gemini AI for Query Processing",
+            "description": "Set up Gemini AI (Pro/Flash) API integration to process incoming user queries, ensuring secure API key management and connectivity.",
+            "dependencies": [],
+            "details": "Implement the Gemini API client in the backend, supporting both Pro and Flash models. Ensure environment variables are used for API keys and that the integration supports both synchronous and asynchronous query handling.",
+            "status": "pending",
+            "testStrategy": "Send sample queries to Gemini AI and verify correct responses are received. Test error handling for invalid API keys and network failures."
+          },
+          {
+            "id": 2,
+            "title": "Design Advanced Prompt Engineering Pipeline",
+            "description": "Develop a prompt engineering framework to extract user intent and relevant entities from natural language queries.",
+            "dependencies": [
+              "17.1"
+            ],
+            "details": "Create reusable prompt templates and logic to dynamically construct prompts based on user input and conversation context. Optimize prompts for intent extraction and entity recognition.",
+            "status": "pending",
+            "testStrategy": "Evaluate prompt effectiveness using a set of diverse queries. Measure extraction accuracy and iteratively refine prompt templates."
+          },
+          {
+            "id": 3,
+            "title": "Implement Query Analysis and Parsing Module",
+            "description": "Build a module to parse user queries, decompose compound or ambiguous queries, and identify actionable intents.",
+            "dependencies": [
+              "17.2"
+            ],
+            "details": "Leverage Gemini AI outputs to segment queries, resolve ambiguities, and structure parsed results for downstream processing. Support multi-intent and compound queries.",
+            "status": "pending",
+            "testStrategy": "Test with single, compound, and ambiguous queries. Validate correct decomposition and intent identification."
+          },
+          {
+            "id": 4,
+            "title": "Develop Context and Conversation History Management",
+            "description": "Implement logic to store, retrieve, and update conversation context and history using Supabase, enabling multi-turn interaction continuity.",
+            "dependencies": [
+              "17.3"
+            ],
+            "details": "Design data models and APIs for persisting conversation state, recent intents, and relevant entities. Ensure context is referenced during query analysis and tool selection.",
+            "status": "pending",
+            "testStrategy": "Simulate multi-turn conversations and verify context is correctly maintained and utilized across turns."
+          },
+          {
+            "id": 5,
+            "title": "Define MCP Tool Selection Schema and Decision Rules",
+            "description": "Create a schema and rule set to map inferred intents and entities to specific MCP tools for Podio data operations.",
+            "dependencies": [
+              "17.3",
+              "17.4"
+            ],
+            "details": "Document all available MCP tools and their capabilities. Develop a mapping logic that selects the appropriate tool(s) based on parsed intent and context, supporting extensibility for new tools.",
+            "status": "pending",
+            "testStrategy": "Validate tool selection logic with a comprehensive suite of test cases covering all supported tools and edge cases."
+          },
+          {
+            "id": 6,
+            "title": "Implement Tool Invocation and Orchestration Layer",
+            "description": "Build the orchestration logic to invoke selected MCP tools, handle multiple tool calls for compound queries, and aggregate results.",
+            "dependencies": [
+              "17.5"
+            ],
+            "details": "Ensure the system can execute one or more MCP tool operations per query, manage dependencies between tool calls, and return unified results to the user.",
+            "status": "pending",
+            "testStrategy": "Test with queries requiring single and multiple tool invocations. Verify correct execution order and result aggregation."
+          },
+          {
+            "id": 7,
+            "title": "Provide Transparent Reasoning Trace for Tool Selection",
+            "description": "Implement a mechanism to generate and log a reasoning trace that explains how tool selection decisions were made for each query.",
+            "dependencies": [
+              "17.6"
+            ],
+            "details": "Capture and store the decision path, including parsed intents, context references, and rule applications, to support debugging and future improvements.",
+            "status": "pending",
+            "testStrategy": "Review reasoning traces for a variety of queries. Confirm traces are accurate, complete, and useful for debugging."
+          },
+          {
+            "id": 8,
+            "title": "Enable Extensibility and Fallback Handling",
+            "description": "Design the system to support easy addition of new MCP tools and implement fallback or clarification prompts when intent is unclear.",
+            "dependencies": [
+              "17.5",
+              "17.7"
+            ],
+            "details": "Abstract tool selection logic to allow plug-and-play integration of new tools. Implement logic to detect unclear intents and prompt users for clarification or fallback gracefully.",
+            "status": "pending",
+            "testStrategy": "Add a mock MCP tool and verify integration. Test with unclear queries and confirm appropriate fallback or clarification prompts are triggered."
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "title": "Implement Large Data Handling and Performance Optimization",
+        "description": "Develop robust strategies for handling large datasets, including intelligent summarization, progressive loading, background processing, and performance monitoring for scenarios with 1000+ comments, large files, and complex item relationships.",
+        "details": "1. Design data models and API endpoints to efficiently support retrieval and manipulation of large datasets (e.g., 1000+ comments, large files, complex relationships). Use cursor-based or keyset pagination for scalable data access.\n2. Implement progressive loading in the frontend, loading data in chunks and rendering incrementally to minimize initial load time and memory usage. Use virtualization libraries (e.g., react-window) for large lists.\n3. Integrate intelligent summarization algorithms to provide condensed views of large comment threads and item relationships, leveraging AI or rule-based approaches for summarization.\n4. Enable background processing for heavy operations (e.g., file uploads, batch data transformations) using serverless functions or job queues. Ensure UI reflects processing status and completion.\n5. Monitor performance metrics (latency, memory usage, throughput) using analytics and logging tools. Profile database queries and API endpoints for bottlenecks, and optimize with indexing, caching, and compression (e.g., gzip, pako).\n6. Handle large files by streaming uploads/downloads and chunking data to avoid memory overload. Store metadata efficiently and support resumable transfers.\n7. Ensure all strategies are compatible with security, RLS, and audit logging requirements.",
+        "testStrategy": "- Load test with datasets exceeding 1000 comments, large files (>100MB), and complex item relationships. Measure API and UI response times, memory usage, and throughput.\n- Verify progressive loading and virtualization by scrolling through large lists and monitoring rendering performance.\n- Test summarization accuracy and relevance for large comment threads.\n- Simulate background processing tasks and confirm UI updates and completion notifications.\n- Monitor analytics dashboards for latency, error rates, and resource utilization under load.\n- Test file uploads/downloads for streaming and chunking behavior, including interruption and resumption scenarios.\n- Confirm compatibility with RLS, audit logging, and security policies.",
+        "status": "pending",
+        "dependencies": [
+          9,
+          10,
+          11,
+          13
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Scalable Data Models and API Endpoints",
+            "description": "Develop efficient data models and API endpoints to support retrieval and manipulation of large datasets, using cursor-based or keyset pagination for scalable access.",
+            "dependencies": [],
+            "details": "Define normalized schemas for comments, files, and relationships. Implement API endpoints that support pagination, filtering, and sorting to minimize data transfer and processing overhead.",
+            "status": "pending",
+            "testStrategy": "Load test API endpoints with datasets exceeding 1000 comments and large files. Measure response times and verify correct pagination behavior."
+          },
+          {
+            "id": 2,
+            "title": "Implement Progressive Loading and Virtualization in Frontend",
+            "description": "Enable progressive loading and rendering of large datasets in the frontend, utilizing virtualization libraries to minimize initial load time and memory usage.",
+            "dependencies": [
+              "18.1"
+            ],
+            "details": "Integrate libraries such as react-window or react-virtualized to render only visible items in large lists. Fetch data in chunks as the user scrolls or interacts.",
+            "status": "pending",
+            "testStrategy": "Scroll through large lists and monitor rendering performance and memory usage. Verify that only visible items are rendered at any time."
+          },
+          {
+            "id": 3,
+            "title": "Integrate Intelligent Summarization Algorithms",
+            "description": "Develop or integrate AI-based or rule-based summarization algorithms to provide condensed views of large comment threads and complex item relationships.",
+            "dependencies": [
+              "18.1"
+            ],
+            "details": "Select or build summarization models suitable for text and relationship data. Expose summarization endpoints and integrate with frontend for on-demand summaries.",
+            "status": "pending",
+            "testStrategy": "Test summarization accuracy and performance on large comment threads. Validate that summaries are concise and relevant."
+          },
+          {
+            "id": 4,
+            "title": "Enable Background Processing for Heavy Operations",
+            "description": "Implement background processing for resource-intensive tasks such as file uploads and batch data transformations using serverless functions or job queues.",
+            "dependencies": [
+              "18.1"
+            ],
+            "details": "Set up background workers or serverless functions for asynchronous processing. Ensure the UI reflects processing status and completion.",
+            "status": "pending",
+            "testStrategy": "Upload large files and trigger batch operations. Confirm that processing occurs in the background and UI updates appropriately."
+          },
+          {
+            "id": 5,
+            "title": "Monitor and Optimize Performance Metrics",
+            "description": "Set up analytics and logging tools to monitor latency, memory usage, and throughput. Profile database queries and API endpoints to identify and resolve bottlenecks.",
+            "dependencies": [
+              "18.1"
+            ],
+            "details": "Integrate monitoring solutions (e.g., Sentry, Datadog). Analyze logs and metrics to detect slow queries or endpoints. Apply indexing, caching, and compression as needed.",
+            "status": "pending",
+            "testStrategy": "Simulate high-load scenarios and monitor system metrics. Profile and optimize slow queries and endpoints."
+          },
+          {
+            "id": 6,
+            "title": "Implement Efficient Large File Handling",
+            "description": "Support streaming uploads/downloads and chunked data transfers for large files to prevent memory overload and enable resumable transfers.",
+            "dependencies": [
+              "18.4"
+            ],
+            "details": "Use streaming APIs and chunked transfer encoding for file operations. Store file metadata efficiently and support resuming interrupted transfers.",
+            "status": "pending",
+            "testStrategy": "Test uploading and downloading files >100MB. Interrupt transfers and verify resumability and data integrity."
+          },
+          {
+            "id": 7,
+            "title": "Ensure Security, RLS, and Audit Logging Compatibility",
+            "description": "Verify that all large data handling strategies comply with security requirements, row-level security (RLS), and audit logging policies.",
+            "dependencies": [
+              "18.1",
+              "18.2",
+              "18.3",
+              "18.4",
+              "18.5",
+              "18.6"
+            ],
+            "details": "Review and update access controls, RLS policies, and audit logging mechanisms to cover all new endpoints and data flows.",
+            "status": "pending",
+            "testStrategy": "Attempt unauthorized access and verify enforcement of RLS and audit logging. Review logs for completeness and accuracy."
+          },
+          {
+            "id": 8,
+            "title": "Document and Validate End-to-End Large Data Handling",
+            "description": "Produce comprehensive documentation and conduct end-to-end validation of all large data handling and performance optimization strategies.",
+            "dependencies": [
+              "18.1",
+              "18.2",
+              "18.3",
+              "18.4",
+              "18.5",
+              "18.6",
+              "18.7"
+            ],
+            "details": "Document data flows, API usage, frontend integration, and operational procedures. Perform integrated tests simulating real-world large dataset scenarios.",
+            "status": "pending",
+            "testStrategy": "Run full-system tests with large datasets, files, and complex relationships. Validate documentation accuracy and completeness."
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "title": "Implement Error Handling and User Feedback System",
+        "description": "Develop a comprehensive error handling and user feedback system for all frontend and backend components, covering network errors, API failures, authentication issues, and user-friendly messaging.",
+        "details": "1. Establish a centralized error handling architecture for both frontend (React/Next.js) and backend (API routes, MCP server), using try/catch blocks, custom error classes, and error boundaries where appropriate. \n2. Categorize errors into recoverable (e.g., network timeouts, temporary API failures) and non-recoverable (e.g., authentication failures, missing configuration), implementing retry logic and graceful degradation strategies for recoverable cases.\n3. Integrate error logging and tracking (e.g., Sentry) to capture, monitor, and analyze errors across the stack, ensuring visibility into error rates and recurrence.\n4. Design and implement user-friendly error messages for all major failure scenarios, avoiding technical jargon and providing actionable feedback.\n5. Build toast notification components for transient feedback (success, warning, error) using shadcn/ui and Tailwind CSS, ensuring accessibility and responsiveness.\n6. Implement loading states and fallback UI components for asynchronous operations and error boundaries, maintaining usability during failures.\n7. Ensure error handling is consistent across chat, dashboard, authentication, and Podio integration workflows, leveraging centralized error code management and schema validation for API responses.\n8. Document error handling conventions and provide code examples for common patterns (e.g., async/await error handling, error boundary usage, toast invocation).",
+        "testStrategy": "- Write automated tests to simulate network errors, API failures, and authentication issues, verifying correct error capture, logging, and user feedback.\n- Manually trigger error scenarios in the UI to confirm toast notifications, loading states, and fallback components render as expected.\n- Review error logs in Sentry and Supabase to ensure errors are tracked and categorized correctly.\n- Validate that error messages are clear, actionable, and accessible (screen reader support, ARIA roles).\n- Test error handling in both desktop and mobile environments, including edge cases (e.g., large data loads, offline mode).",
+        "status": "pending",
+        "dependencies": [
+          1,
+          3,
+          4,
+          6,
+          7,
+          9,
+          16
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Centralized Error Handling Architecture",
+            "description": "Establish a unified error handling architecture for both frontend (React/Next.js) and backend (API routes, MCP server), utilizing try/catch blocks, custom error classes, and error boundaries where appropriate.",
+            "dependencies": [],
+            "details": "Define global and local error boundaries in React/Next.js, implement custom error classes for backend, and ensure consistent error propagation and handling across the stack.",
+            "status": "pending",
+            "testStrategy": "Write unit and integration tests to verify error propagation and handling in both frontend and backend components."
+          },
+          {
+            "id": 2,
+            "title": "Categorize and Handle Error Types",
+            "description": "Classify errors into recoverable (e.g., network timeouts, temporary API failures) and non-recoverable (e.g., authentication failures, missing configuration), and implement appropriate handling strategies.",
+            "dependencies": [
+              "19.1"
+            ],
+            "details": "Implement retry logic and graceful degradation for recoverable errors, and ensure immediate user feedback and secure handling for non-recoverable errors.",
+            "status": "pending",
+            "testStrategy": "Simulate both recoverable and non-recoverable errors, verifying correct categorization and handling logic."
+          },
+          {
+            "id": 3,
+            "title": "Integrate Error Logging and Tracking",
+            "description": "Set up error logging and monitoring tools (e.g., Sentry) to capture, track, and analyze errors across frontend and backend systems.",
+            "dependencies": [
+              "19.1"
+            ],
+            "details": "Configure error reporting for both client and server, ensuring sensitive data is not leaked and error context is preserved for debugging.",
+            "status": "pending",
+            "testStrategy": "Trigger various error scenarios and confirm they are logged and tracked in the monitoring dashboard."
+          },
+          {
+            "id": 4,
+            "title": "Implement User-Friendly Error Messaging",
+            "description": "Design and display clear, actionable, and non-technical error messages for all major failure scenarios.",
+            "dependencies": [
+              "19.2"
+            ],
+            "details": "Avoid technical jargon, provide guidance for recovery when possible, and ensure messages are accessible and localized if needed.",
+            "status": "pending",
+            "testStrategy": "Manually and automatically trigger error states, verifying that user-facing messages are appropriate and actionable."
+          },
+          {
+            "id": 5,
+            "title": "Develop Toast Notification Components",
+            "description": "Build reusable toast notification components for transient feedback (success, warning, error) using shadcn/ui and Tailwind CSS.",
+            "dependencies": [
+              "19.4"
+            ],
+            "details": "Ensure notifications are accessible, responsive, and can be triggered from any part of the application.",
+            "status": "pending",
+            "testStrategy": "Trigger notifications from various workflows and verify correct rendering, accessibility, and dismissal behavior."
+          },
+          {
+            "id": 6,
+            "title": "Implement Loading States and Fallback UI",
+            "description": "Create loading indicators and fallback UI components for asynchronous operations and error boundaries to maintain usability during failures.",
+            "dependencies": [
+              "19.1"
+            ],
+            "details": "Use suspense, skeleton loaders, and error fallback components to provide a smooth user experience during data fetching or error recovery.",
+            "status": "pending",
+            "testStrategy": "Simulate slow network and error conditions, confirming that loading and fallback UIs render as expected."
+          },
+          {
+            "id": 7,
+            "title": "Ensure Consistency Across Workflows",
+            "description": "Apply error handling and feedback conventions consistently across chat, dashboard, authentication, and Podio integration workflows.",
+            "dependencies": [
+              "19.2",
+              "19.4",
+              "19.5",
+              "19.6"
+            ],
+            "details": "Leverage centralized error code management and schema validation for API responses to standardize error handling.",
+            "status": "pending",
+            "testStrategy": "Review and test all major workflows to confirm consistent error handling and user feedback."
+          },
+          {
+            "id": 8,
+            "title": "Document Error Handling Conventions and Patterns",
+            "description": "Create comprehensive documentation of error handling conventions, including code examples for common patterns such as async/await error handling, error boundary usage, and toast invocation.",
+            "dependencies": [
+              "19.1",
+              "19.4",
+              "19.5",
+              "19.6",
+              "19.7"
+            ],
+            "details": "Ensure documentation is accessible to all developers and kept up to date with implementation changes.",
+            "status": "pending",
+            "testStrategy": "Peer review documentation and verify that examples are accurate and easy to follow."
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "title": "Implement Analytics and User Behavior Tracking",
+        "description": "Set up comprehensive analytics to monitor user behavior, chat patterns, AI response quality, and system performance, including user engagement metrics, feature usage analytics, and performance dashboards.",
+        "details": "Integrate a robust analytics platform (such as Vercel Analytics, Supabase logs, or a third-party solution like Segment or Mixpanel) into both frontend (Next.js) and backend (API routes, MCP server) layers. Instrument key user interactions (e.g., chat initiation, message send/receive, feature usage, navigation events) using event tracking. Capture AI response quality metrics by logging response times, error rates, and user feedback on AI answers. Track system performance metrics such as API latency, error rates, and resource utilization, leveraging existing monitoring infrastructure. Design and implement real-time and historical dashboards for user engagement (DAU/WAU/MAU, session duration, retention), feature adoption, and system health. Ensure analytics respect user privacy and comply with security and audit logging requirements. Provide documentation for tracked events and dashboard usage.",
+        "testStrategy": "Verify that all key user actions and system events are correctly tracked by triggering them in the UI and backend, then confirming their appearance in analytics dashboards and logs. Simulate various user journeys and confirm metrics (engagement, feature usage, AI response quality) are accurately reflected. Test dashboard filtering, time ranges, and real-time updates. Review compliance with privacy and security policies by inspecting data payloads and access controls. Conduct performance tests to ensure analytics instrumentation does not introduce significant latency or errors.",
+        "status": "pending",
+        "dependencies": [
+          13,
+          16,
+          19
+        ],
+        "priority": "medium",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Select and Configure Analytics Platform",
+            "description": "Evaluate and choose an analytics solution (e.g., Vercel Analytics, Supabase logs, Segment, Mixpanel) that meets requirements for user behavior, AI quality, and system performance tracking. Set up accounts, obtain API keys, and configure environment variables.",
+            "dependencies": [],
+            "details": "Compare analytics platforms for compatibility with Next.js and backend stack. Ensure chosen solution supports event tracking, custom metrics, and dashboarding. Document configuration steps.",
+            "status": "pending",
+            "testStrategy": "Verify platform connectivity by sending test events and confirming their appearance in the analytics dashboard."
+          },
+          {
+            "id": 2,
+            "title": "Integrate Analytics into Frontend (Next.js)",
+            "description": "Embed analytics scripts or SDKs into the Next.js frontend to enable tracking of user interactions and navigation events.",
+            "dependencies": [
+              "20.1"
+            ],
+            "details": "Add analytics initialization code to the main entry point (e.g., _app.js or instrumentation-client.js). Ensure scripts load asynchronously and only in production environments. Instrument navigation and page view events.",
+            "status": "pending",
+            "testStrategy": "Trigger navigation and interaction events in the UI and confirm they are logged in the analytics platform."
+          },
+          {
+            "id": 3,
+            "title": "Integrate Analytics into Backend (API & MCP Server)",
+            "description": "Set up analytics event logging in backend API routes and MCP server to capture server-side events, errors, and performance metrics.",
+            "dependencies": [
+              "20.1"
+            ],
+            "details": "Implement middleware or hooks to log API requests, response times, error rates, and resource usage. Ensure backend events are correlated with frontend user sessions where possible.",
+            "status": "pending",
+            "testStrategy": "Simulate API calls and backend events, then verify their appearance in analytics logs and dashboards."
+          },
+          {
+            "id": 4,
+            "title": "Instrument Key User Interactions and Feature Usage",
+            "description": "Define and implement event tracking for critical user actions such as chat initiation, message send/receive, feature toggles, and navigation.",
+            "dependencies": [
+              "20.2"
+            ],
+            "details": "Map out user journeys and identify key interaction points. Add event tracking code to relevant UI components and backend endpoints. Use consistent event naming conventions.",
+            "status": "pending",
+            "testStrategy": "Perform each tracked action in the UI and confirm corresponding events are captured in analytics."
+          },
+          {
+            "id": 5,
+            "title": "Capture and Log AI Response Quality Metrics",
+            "description": "Track AI response times, error rates, and collect user feedback on AI answers for quality assessment.",
+            "dependencies": [
+              "20.3"
+            ],
+            "details": "Log response latency and error codes for each AI interaction. Provide UI for users to rate or flag AI responses, and record feedback events.",
+            "status": "pending",
+            "testStrategy": "Test AI interactions with both successful and failed responses, and submit feedback to ensure all metrics are logged."
+          },
+          {
+            "id": 6,
+            "title": "Track System Performance and Health Metrics",
+            "description": "Monitor API latency, error rates, and resource utilization using analytics and existing monitoring infrastructure.",
+            "dependencies": [
+              "20.3"
+            ],
+            "details": "Integrate with monitoring tools (e.g., Vercel Analytics, Supabase logs) to collect system health data. Set up event logging for performance anomalies and critical errors.",
+            "status": "pending",
+            "testStrategy": "Induce load and error scenarios, then verify that performance and health metrics are accurately reported."
+          },
+          {
+            "id": 7,
+            "title": "Design and Implement Real-Time and Historical Dashboards",
+            "description": "Create dashboards to visualize user engagement, feature adoption, AI quality, and system health metrics in real time and over historical periods.",
+            "dependencies": [
+              "20.4",
+              "20.5",
+              "20.6"
+            ],
+            "details": "Use the analytics platform’s dashboarding tools to build views for DAU/WAU/MAU, session duration, retention, feature usage, and system health. Configure filters and time ranges.",
+            "status": "pending",
+            "testStrategy": "Review dashboards for completeness and accuracy by comparing displayed metrics with raw event logs."
+          },
+          {
+            "id": 8,
+            "title": "Ensure Privacy Compliance and Document Analytics Implementation",
+            "description": "Review analytics instrumentation for privacy compliance (e.g., GDPR), implement necessary consent mechanisms, and document all tracked events and dashboard usage.",
+            "dependencies": [
+              "20.2",
+              "20.3",
+              "20.4",
+              "20.5",
+              "20.6",
+              "20.7"
+            ],
+            "details": "Audit event data for PII, implement user consent prompts if required, and provide clear documentation for developers and auditors.",
+            "status": "pending",
+            "testStrategy": "Conduct a privacy review, test consent flows, and validate documentation with stakeholders."
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-09-02T09:51:15.563Z",
+      "updated": "2025-09-02T09:57:11.739Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

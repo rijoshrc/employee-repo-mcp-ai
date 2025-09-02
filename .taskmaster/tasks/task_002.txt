@@ -1,0 +1,49 @@
+# Task ID: 2
+# Title: Configure Supabase Project and PostgreSQL Database
+# Status: pending
+# Dependencies: 1
+# Priority: high
+# Description: Provision Supabase project, set up PostgreSQL database, enable Row Level Security (RLS), and define initial schema for users, chat sessions, messages, and Podio cache.
+# Details:
+Create Supabase project. Define tables: users, chat_sessions, messages, podio_cache, files, system_settings. Enable RLS on all tables. Use Supabase SQL editor for schema migration. Set up Supabase Storage for file uploads.
+
+# Test Strategy:
+Write integration tests to verify RLS policies. Use Supabase dashboard to confirm schema and permissions. Test file upload and retrieval.
+
+# Subtasks:
+## 1. Provision Supabase Project [pending]
+### Dependencies: None
+### Description: Create a new Supabase project using the Supabase dashboard, ensuring the project is initialized and accessible.
+### Details:
+Sign up or log in to Supabase, create a new project, and note the project URL and API keys for later configuration.
+
+## 2. Set Up PostgreSQL Database Schema [pending]
+### Dependencies: 2.1
+### Description: Define the initial PostgreSQL schema using the Supabase SQL editor, including tables for users, chat_sessions, messages, podio_cache, files, and system_settings.
+### Details:
+Write and execute SQL migration scripts in the Supabase SQL editor to create all required tables with appropriate columns and data types.
+
+## 3. Enable Row Level Security (RLS) on All Tables [pending]
+### Dependencies: 2.2
+### Description: Activate Row Level Security for each table and define default RLS policies to restrict data access.
+### Details:
+Enable RLS via the Supabase dashboard or SQL commands, and add basic RLS policies (e.g., authenticated users can only access their own records).
+
+## 4. Configure Supabase Storage for File Uploads [pending]
+### Dependencies: 2.1
+### Description: Set up Supabase Storage buckets to support file uploads and retrieval for the application.
+### Details:
+Create storage buckets in the Supabase dashboard, configure access policies, and link storage to the files table.
+
+## 5. Define and Apply Schema Migration Scripts [pending]
+### Dependencies: 2.2
+### Description: Organize and apply schema migration scripts using the Supabase SQL editor to ensure reproducible database setup.
+### Details:
+Store all schema definitions and changes as SQL migration scripts, and apply them in the correct order using the Supabase SQL editor.
+
+## 6. Verify Permissions and Schema via Supabase Dashboard [pending]
+### Dependencies: 2.3, 2.4, 2.5
+### Description: Review and confirm that all tables, RLS policies, and storage settings are correctly configured using the Supabase dashboard.
+### Details:
+Manually inspect the Supabase dashboard to ensure all schema elements and security policies are in place and functioning as intended.
+
