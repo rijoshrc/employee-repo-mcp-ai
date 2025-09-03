@@ -9,11 +9,34 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { MessageCircle, Zap } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 
 export default function LoginPage() {
+  const searchParams = useSearchParams();
+  const error = searchParams.get("error");
+
   const handlePodioLogin = () => {
-    // Temporarily disabled NextAuth
-    console.log("Podio login clicked - NextAuth temporarily disabled");
+    // Redirect to our OAuth authorization endpoint
+    window.location.href = "/api/auth/podio";
+  };
+
+  const getErrorMessage = (errorCode: string) => {
+    switch (errorCode) {
+      case "oauth_error":
+        return "OAuth authentication failed. Please try again.";
+      case "state_mismatch":
+        return "Security validation failed. Please try again.";
+      case "no_code":
+        return "Authorization code not received. Please try again.";
+      case "token_exchange_failed":
+        return "Token exchange failed. Please try again.";
+      case "profile_fetch_failed":
+        return "Failed to fetch user profile. Please try again.";
+      case "callback_error":
+        return "Authentication callback failed. Please try again.";
+      default:
+        return "An error occurred during authentication. Please try again.";
+    }
   };
 
   return (
@@ -29,6 +52,13 @@ export default function LoginPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
+          {/* Error Message */}
+          {error && (
+            <div className="p-3 text-sm text-red-600 bg-red-50 border border-red-200 rounded-md">
+              {getErrorMessage(error)}
+            </div>
+          )}
+
           {/* Podio OAuth Button */}
           <Button
             onClick={handlePodioLogin}
