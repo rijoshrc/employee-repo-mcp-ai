@@ -45,13 +45,13 @@ The Podio AI Chat Assistant is a web-based application that enables users to int
 
 - **Frontend**: Next.js 15 with TypeScript, Tailwind CSS, shadcn/ui components
 - **Backend**: Next.js API routes, Node.js
-- **Authentication**: Supabase Auth with Podio OAuth integration
+- **Authentication**: NextAuth.js with Podio OAuth 2.0 integration
 - **AI Integration**: Google Gemini AI (Gemini Pro or Gemini Flash)
 - **MCP Integration**: Custom MCP server for Podio API calls
 - **Database**: Supabase PostgreSQL for chat history and user data
 - **File Storage**: Supabase Storage for files and exports
 - **Real-time**: Supabase Realtime for live chat updates
-- **Session Storage**: Supabase PostgreSQL with Row Level Security (RLS)
+- **Session Storage**: NextAuth.js JWT sessions with encrypted token storage
 - **UI Components**: shadcn/ui with custom theme system
 - **Testing**: Jest, React Testing Library, Playwright
 - **Deployment**: Vercel or similar cloud platform
@@ -74,10 +74,10 @@ The Podio AI Chat Assistant is a web-based application that enables users to int
 
 #### 3.2.3 Session Storage
 
-- **Session Storage**: Supabase PostgreSQL with Row Level Security (RLS)
-- **Session Purpose**: Store user sessions, API tokens, and temporary data
+- **Session Storage**: NextAuth.js JWT sessions with encrypted token storage
+- **Session Purpose**: Store user sessions, Podio OAuth tokens, and temporary data
 - **Data Types**: OAuth tokens, user sessions, and cached API responses
-- **Advantages**: Integrated with Supabase auth, automatic session management, and secure token storage
+- **Advantages**: Integrated with NextAuth.js, automatic session management, and secure token storage
 
 #### 3.2.4 Environment Configuration
 

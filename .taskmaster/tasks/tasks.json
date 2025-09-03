@@ -113,7 +113,7 @@
         "dependencies": [
           1
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -121,7 +121,7 @@
             "description": "Create a new Supabase project using the Supabase dashboard, ensuring the project is initialized and accessible.",
             "dependencies": [],
             "details": "Sign up or log in to Supabase, create a new project, and note the project URL and API keys for later configuration.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Verify project creation by accessing the Supabase dashboard and confirming project visibility."
           },
           {
@@ -132,7 +132,7 @@
               "2.1"
             ],
             "details": "Write and execute SQL migration scripts in the Supabase SQL editor to create all required tables with appropriate columns and data types.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Check the Supabase dashboard to confirm all tables exist with correct structure."
           },
           {
@@ -143,7 +143,7 @@
               "2.2"
             ],
             "details": "Enable RLS via the Supabase dashboard or SQL commands, and add basic RLS policies (e.g., authenticated users can only access their own records).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Write integration tests to verify RLS enforcement and attempt unauthorized access to ensure policies are effective."
           },
           {
@@ -154,7 +154,7 @@
               "2.1"
             ],
             "details": "Create storage buckets in the Supabase dashboard, configure access policies, and link storage to the files table.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Upload and retrieve test files using the Supabase dashboard and API to confirm correct configuration."
           },
           {
@@ -165,7 +165,7 @@
               "2.2"
             ],
             "details": "Store all schema definitions and changes as SQL migration scripts, and apply them in the correct order using the Supabase SQL editor.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Re-run migrations on a fresh project to confirm schema is reproducible and consistent."
           },
           {
@@ -178,17 +178,17 @@
               "2.5"
             ],
             "details": "Manually inspect the Supabase dashboard to ensure all schema elements and security policies are in place and functioning as intended.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Perform manual and automated checks for schema correctness, RLS enforcement, and storage access."
           }
         ]
       },
       {
         "id": 3,
-        "title": "Implement Supabase Auth with Podio OAuth Integration",
-        "description": "Integrate Supabase Auth with custom Podio OAuth provider for secure user authentication and session management.",
-        "details": "Use Supabase Auth's external OAuth provider support. Implement Podio OAuth 2.0 flow (per Podio API docs). Store and refresh tokens securely. Sync user profile data from Podio on login. Use environment variables for client secrets.",
-        "testStrategy": "Automated tests for login, logout, and token refresh. Manual test with real Podio account. Verify user data is synced and session persists.",
+        "title": "Implement Podio OAuth Authentication",
+        "description": "Implement Podio OAuth 2.0 authentication using NextAuth.js, storing tokens for both authentication and API calls.",
+        "details": "Use NextAuth.js with a custom Podio OAuth provider. Store access and refresh tokens securely in the session. Use the same tokens for both authentication validation and Podio API calls. Implement token refresh logic. Sync user profile data from Podio on login.",
+        "testStrategy": "Automated tests for login, logout, and token refresh. Manual test with real Podio account. Verify tokens are available for API calls and session persists.",
         "priority": "high",
         "dependencies": [
           2
@@ -198,7 +198,7 @@
           {
             "id": 1,
             "title": "Register Podio OAuth App and Configure Credentials",
-            "description": "Create a new OAuth application in Podio, obtain the client ID and secret, and configure the necessary redirect URIs for Supabase integration.",
+            "description": "Create a new OAuth application in Podio, obtain the client ID and secret, and configure the necessary redirect URIs for NextAuth integration.",
             "dependencies": [],
             "details": "Follow Podio API documentation to register the app. Store client credentials securely using environment variables as per best practices.",
             "status": "pending",
@@ -206,14 +206,14 @@
           },
           {
             "id": 2,
-            "title": "Enable and Configure Custom OAuth Provider in Supabase Auth",
-            "description": "Set up Supabase Auth to use Podio as an external OAuth provider by entering the client ID, secret, and redirect URIs in the Supabase dashboard.",
+            "title": "Configure NextAuth.js with Podio OAuth Provider",
+            "description": "Set up NextAuth.js with a custom Podio OAuth provider, configuring the OAuth flow and token handling.",
             "dependencies": [
               "3.1"
             ],
-            "details": "Use Supabase's external OAuth provider support to add Podio, referencing the provider configuration section in Supabase settings.",
+            "details": "Create a custom Podio OAuth provider for NextAuth.js. Configure the OAuth endpoints, client credentials, and token exchange logic.",
             "status": "pending",
-            "testStrategy": "Check that the Podio provider appears in the Supabase Auth providers list and that configuration values are correct."
+            "testStrategy": "Check that the Podio provider is configured in NextAuth.js and OAuth flow can be initiated."
           },
           {
             "id": 3,
@@ -222,42 +222,42 @@
             "dependencies": [
               "3.2"
             ],
-            "details": "Use the PKCE flow if supported. Store the code verifier in the session and handle the authorization code exchange securely.",
+            "details": "Use the standard OAuth 2.0 flow. Handle authorization code exchange securely and store tokens in the session.",
             "status": "pending",
             "testStrategy": "Automated and manual tests to ensure users can complete the OAuth flow and receive tokens."
           },
           {
             "id": 4,
-            "title": "Securely Store and Refresh Podio OAuth Tokens",
-            "description": "Implement secure storage for access and refresh tokens, and set up logic to refresh tokens as needed using Supabase backend functions.",
+            "title": "Store Podio OAuth Tokens in Session",
+            "description": "Implement secure storage for access and refresh tokens in the NextAuth.js session, making them available for API calls.",
             "dependencies": [
               "3.3"
             ],
-            "details": "Ensure tokens are never exposed to the client. Use Supabase Edge Functions or server-side logic for token refresh and storage.",
+            "details": "Store tokens in the NextAuth.js session using JWT strategy. Ensure tokens are encrypted and accessible for API calls.",
             "status": "pending",
-            "testStrategy": "Automated tests for token storage, retrieval, and refresh. Manual test to verify tokens are not accessible from the client."
+            "testStrategy": "Automated tests for token storage and retrieval. Manual test to verify tokens are accessible from the session."
           },
           {
             "id": 5,
-            "title": "Sync User Profile Data from Podio on Login",
-            "description": "Fetch and update user profile data from Podio each time a user logs in or refreshes their session.",
+            "title": "Implement Token Refresh Logic",
+            "description": "Set up automatic token refresh when access tokens expire, using the refresh token to obtain new access tokens.",
             "dependencies": [
               "3.4"
             ],
-            "details": "Call Podio API endpoints to retrieve user profile information and update Supabase user records accordingly.",
+            "details": "Implement token refresh logic in NextAuth.js callbacks. Handle token expiration gracefully and update session with new tokens.",
             "status": "pending",
-            "testStrategy": "Automated tests to verify profile data is fetched and stored. Manual test to confirm data accuracy after login."
+            "testStrategy": "Automated tests for token refresh scenarios. Manual test to verify tokens are refreshed automatically."
           },
           {
             "id": 6,
-            "title": "Integrate Session Management with Supabase Auth",
-            "description": "Ensure that user sessions are managed using Supabase Auth, leveraging the Podio OAuth tokens for authentication and session persistence.",
+            "title": "Sync User Profile Data from Podio",
+            "description": "Fetch and update user profile data from Podio each time a user logs in, storing it in the session.",
             "dependencies": [
-              "3.5"
+              "3.4"
             ],
-            "details": "Map Podio-authenticated users to Supabase Auth users. Handle session creation, validation, and termination securely.",
+            "details": "Call Podio API endpoints to retrieve user profile information and store it in the NextAuth.js session.",
             "status": "pending",
-            "testStrategy": "Automated tests for login, logout, and session persistence. Manual test to verify session continuity."
+            "testStrategy": "Automated tests to verify profile data is fetched and stored. Manual test to confirm data accuracy after login."
           },
           {
             "id": 7,
@@ -1379,7 +1379,7 @@
               "20.5",
               "20.6"
             ],
-            "details": "Use the analytics platform’s dashboarding tools to build views for DAU/WAU/MAU, session duration, retention, feature usage, and system health. Configure filters and time ranges.",
+            "details": "Use the analytics platform's dashboarding tools to build views for DAU/WAU/MAU, session duration, retention, feature usage, and system health. Configure filters and time ranges.",
             "status": "pending",
             "testStrategy": "Review dashboards for completeness and accuracy by comparing displayed metrics with raw event logs."
           },
@@ -1404,7 +1404,7 @@
     ],
     "metadata": {
       "created": "2025-09-02T09:51:15.563Z",
-      "updated": "2025-09-02T09:57:11.739Z",
+      "updated": "2025-09-02T12:29:06.738Z",
       "description": "Tasks for master context"
     }
   }
